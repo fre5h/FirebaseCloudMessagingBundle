@@ -1,0 +1,48 @@
+{
+    "name": "fresh/fcm-bundle",
+    "description": "Provides integration with Firebase Cloud Messaging API.",
+    "keywords": [
+        "symfony",
+        "bundle",
+        "fcm",
+        "firebase",
+        "cloud",
+        "messaging",
+        "api client",
+        "firebase cloud messaging",
+        "notification",
+        "push",
+        "push-notification",
+        "web-push",
+        "web-push-notification",
+        "android",
+        "ios"
+    ],
+    "homepage": "https://firebase.google.com/docs/cloud-messaging/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Artem Genvald",
+            "email": "genvaldartem@gmail.com",
+            "role": "Creator"
+        }
+    ],
+    "support": {
+        "email": "genvaldartem@gmail.com",
+        "issues": "https://github.com/fre5h/fcm-bundle/issues"
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "fresh/fcm-api-client": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "squizlabs/php_codesniffer": "~2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fresh\\FcmBundle\\": "src/"
+        }
+    }
+}
