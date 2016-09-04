@@ -1,6 +1,10 @@
 parameters:
-    fcm.api_client.class: Fresh\Fcm\Client
+    fcm.client.class: Fresh\Fcm\Client
 
 services:
     fcm.client:
-        class: "%fcm.api_client.class%"
+        class: "%fcm.client.class%"
+        arguments:
+            - "%fcm.sender_id%"
+            - "%fcm.server_key%"
+            - "%fcm.endpoint%"
