@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the FreshFcmBundle
+ * This file is part of the FirebaseCloudMessagingBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
  *
@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Fresh\FcmBundle\DependencyInjection;
+namespace Fresh\FirebaseCloudMessagingBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -16,11 +16,11 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * This is the class that loads and manages FreshFcmBundle configuration.
+ * This is the class that loads and manages FirebaseCloudMessagingBundle configuration.
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class FreshFcmExtension extends Extension
+class FreshFirebaseCloudMessagingBundle extends Extension
 {
     /**
      * {@inheritdoc}

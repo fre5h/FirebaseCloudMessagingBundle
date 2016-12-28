@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the FreshFcmBundle
+ * This file is part of the FirebaseCloudMessagingBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
  *
@@ -8,15 +8,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Fresh\FcmBundle;
+namespace Fresh\FirebaseCloudMessagingBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * FcmBundle.
+ * FirebaseCloudMessagingBundle.
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class FcmBundle extends Bundle
+class FirebaseCloudMessagingBundle extends Bundle
 {
 }
