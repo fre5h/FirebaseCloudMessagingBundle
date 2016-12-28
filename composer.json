@@ -3,7 +3,7 @@
     "description": "Provides integration with Firebase Cloud Messaging API.",
     "keywords": ["symfony", "bundle", "fcm", "firebase", "cloud", "messaging", "api client", "firebase cloud messaging", "notification", "push", "push-notification", "web-push", "web-push-notification", "android", "ios"],
     "homepage": "https://firebase.google.com/docs/cloud-messaging/",
-    "type": "library",
+    "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
         {
@@ -18,15 +18,22 @@
     },
     "require": {
         "php": ">=5.6.0",
+        "symfony/config": "^3.2.0",
+        "symfony/event-dispatcher": "^3.2.0",
         "fresh/firebase-cloud-messaging-api-php-client": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "5.7.*",
-        "squizlabs/php_codesniffer": "~2.7"
+        "squizlabs/php_codesniffer": "~2.7",
+        "escapestudios/symfony2-coding-standard": "~2.9",
+        "matthiasnoback/symfony-config-test": "2.1.*"
     },
     "autoload": {
         "psr-4": {
             "Fresh\\FirebaseCloudMessagingBundle\\": ""
-        }
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     }
 }
