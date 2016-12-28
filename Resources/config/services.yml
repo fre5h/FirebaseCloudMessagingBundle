@@ -1,5 +1,5 @@
 parameters:
-    fcm.client.class: Fresh\Fcm\Client
+    fcm.client.class: Fresh\FirebaseCloudMessaging\Client
 
 services:
     fcm.client:

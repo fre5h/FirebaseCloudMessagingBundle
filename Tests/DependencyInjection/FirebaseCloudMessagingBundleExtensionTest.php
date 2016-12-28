@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the FreshFcmBundle
+ * This file is part of the FirebaseCloudMessagingBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
  *
@@ -8,26 +8,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Fresh\FcmBundle\Tests\DependencyInjection;
+namespace Fresh\FirebaseCloudMessagingBundle\Tests\DependencyInjection;
 
-use Fresh\FcmBundle\DependencyInjection\FreshFcmExtension;
+use Fresh\FirebaseCloudMessagingBundle\DependencyInjection\FirebaseCloudMessagingBundleExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * FreshFcmExtensionTest.
+ * FirebaseCloudMessagingBundleExtensionTest.
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class FreshFcmExtensionTest extends \PHPUnit_Framework_TestCase
+class FirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var FreshFcmExtension $extension FreshFcmExtension
-     */
+    /** @var FirebaseCloudMessagingBundleExtension */
     private $extension;
 
-    /**
-     * @var ContainerBuilder $container Container builder
-     */
+    /** @var ContainerBuilder */
     private $container;
 
     /**
@@ -35,7 +31,7 @@ class FreshFcmExtensionTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->extension = new FreshFcmExtension();
+        $this->extension = new FirebaseCloudMessagingBundleExtension();
         $this->container = new ContainerBuilder();
         $this->container->registerExtension($this->extension);
     }
@@ -47,5 +43,8 @@ class FreshFcmExtensionTest extends \PHPUnit_Framework_TestCase
 
         // Check that services have been loaded
         $this->assertTrue($this->container->has('fcm.client'));
+        $this->assertTrue($this->container->hasParameter('fcm.sender_id'));
+        $this->assertTrue($this->container->hasParameter('fcm.server_key'));
+        $this->assertTrue($this->container->hasParameter('fcm.endpoint'));
     }
 }

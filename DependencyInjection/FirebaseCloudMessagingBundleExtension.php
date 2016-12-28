@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class FreshFirebaseCloudMessagingBundle extends Extension
+class FirebaseCloudMessagingBundleExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -29,5 +29,12 @@ class FreshFirebaseCloudMessagingBundle extends Extension
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $container->setParameter('fcm.sender_id', $config['sender_id']);
+        $container->setParameter('fcm.server_key', $config['server_key']);
+        $container->setParameter('fcm.endpoint', $config['endpoint']);
     }
 }
