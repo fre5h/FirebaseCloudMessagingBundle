@@ -13,10 +13,10 @@ namespace Fresh\FirebaseCloudMessagingBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * FirebaseCloudMessagingBundle.
+ * FreshFirebaseCloudMessagingBundle.
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class FirebaseCloudMessagingBundle extends Bundle
+class FreshFirebaseCloudMessagingBundle extends Bundle
 {
 }

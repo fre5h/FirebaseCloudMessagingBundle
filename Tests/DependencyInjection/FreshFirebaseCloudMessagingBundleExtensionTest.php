@@ -10,17 +10,17 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\DependencyInjection;
 
-use Fresh\FirebaseCloudMessagingBundle\DependencyInjection\FirebaseCloudMessagingBundleExtension;
+use Fresh\FirebaseCloudMessagingBundle\DependencyInjection\FreshFirebaseCloudMessagingBundleExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * FirebaseCloudMessagingBundleExtensionTest.
+ * FreshFirebaseCloudMessagingBundleExtensionTest.
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class FirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_TestCase
+class FreshFirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var FirebaseCloudMessagingBundleExtension */
+    /** @var FreshFirebaseCloudMessagingBundleExtension */
     private $extension;
 
     /** @var ContainerBuilder */
@@ -31,7 +31,7 @@ class FirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_TestC
      */
     protected function setUp()
     {
-        $this->extension = new FirebaseCloudMessagingBundleExtension();
+        $this->extension = new FreshFirebaseCloudMessagingBundleExtension();
         $this->container = new ContainerBuilder();
         $this->container->registerExtension($this->extension);
     }
