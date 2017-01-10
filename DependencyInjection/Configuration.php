@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('sender_id')->end()
+                ->scalarNode('messaging_sender_id')->end()
                 ->scalarNode('server_key')->end()
                 ->scalarNode('endpoint')->defaultValue('https://fcm.googleapis.com/fcm/send')->end()
             ->end();

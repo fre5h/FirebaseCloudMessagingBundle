@@ -41,10 +41,9 @@ class FreshFirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_
         $this->container->loadFromExtension($this->extension->getAlias());
         $this->container->compile();
 
-        // Check that services have been loaded
-        $this->assertTrue($this->container->has('fcm.client'));
-        $this->assertTrue($this->container->hasParameter('fcm.sender_id'));
-        $this->assertTrue($this->container->hasParameter('fcm.server_key'));
-        $this->assertTrue($this->container->hasParameter('fcm.endpoint'));
+        $this->assertTrue($this->container->has('firebase_cloud_messaging.client'));
+        $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.sender_id'));
+        $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.server_key'));
+        $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.endpoint'));
     }
 }

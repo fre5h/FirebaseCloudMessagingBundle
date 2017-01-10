@@ -8,6 +8,9 @@ php:
   - 7.1
 
 env:
+  - SYMFONY_VERSION=2.8.*
+  - SYMFONY_VERSION=3.0.*
+  - SYMFONY_VERSION=3.1.*
   - SYMFONY_VERSION=3.2.*
 
 before_script:
