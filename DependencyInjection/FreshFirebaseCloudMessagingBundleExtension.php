@@ -33,7 +33,7 @@ class FreshFirebaseCloudMessagingBundleExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('firebase_cloud_messaging.messaging_sender_id', $config['messaging_sender_id']);
+        $container->setParameter('firebase_cloud_messaging.sender_id', $config['messaging_sender_id']);
         $container->setParameter('firebase_cloud_messaging.server_key', $config['server_key']);
         $container->setParameter('firebase_cloud_messaging.endpoint', $config['endpoint']);
     }
