@@ -16,11 +16,11 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * This is the class that loads and manages FreshFirebaseCloudMessagingBundleExtension configuration.
+ * This is the class that loads and manages FreshFirebaseCloudMessagingBundle configuration.
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class FreshFirebaseCloudMessagingBundleExtension extends Extension
+class FreshFirebaseCloudMessagingExtension extends Extension
 {
     /**
      * {@inheritdoc}
