@@ -37,4 +37,12 @@ class FreshFirebaseCloudMessagingBundleExtension extends Extension
         $container->setParameter('firebase_cloud_messaging.server_key', $config['server_key']);
         $container->setParameter('firebase_cloud_messaging.endpoint', $config['endpoint']);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAlias()
+    {
+        return 'fresh_firebase_cloud_messaging';
+    }
 }
