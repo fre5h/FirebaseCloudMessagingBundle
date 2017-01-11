@@ -5,8 +5,8 @@ services:
     firebase_cloud_messaging.client:
         class: "%firebase_cloud_messaging.client.class%"
         arguments:
-            - "%firebase_cloud_messaging.sender_id%"
             - "%firebase_cloud_messaging.server_key%"
+            - "%firebase_cloud_messaging.sender_id%"
             - "%firebase_cloud_messaging.endpoint%"
         calls:
             - [setEventDispatcher, ["@event_dispatcher"]]
