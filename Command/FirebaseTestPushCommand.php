@@ -25,7 +25,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 class FirebaseTestPushCommand extends ContainerAwareCommand
 {
-    /** @var Client  */
+    /** @var Client */
     private $fcmClient;
 
     /**
@@ -58,8 +58,9 @@ HELP
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $message = MessageFactory::createWebMessage()
-            ->setTarget(TargetFactory::createSingleRecipientTarget()
-                ->setRegistrationToken($input->getArgument('registration_token'))
+            ->setTarget(
+                TargetFactory::createSingleRecipientTarget()
+                    ->setRegistrationToken($input->getArgument('registration_token'))
             )
             ->setPayload(
                 PayloadFactory::createNotificationWebPayload()
@@ -68,6 +69,5 @@ HELP
             );
 
         $this->fcmClient->sendMessage($message);
-
     }
 }
