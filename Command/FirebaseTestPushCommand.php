@@ -57,6 +57,9 @@ HELP
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $io = new SymfonyStyle($input, $output);
+        $io->title('Sending message...');
+
         $message = MessageFactory::createWebMessage()
             ->setTarget(
                 TargetFactory::createSingleRecipientTarget()
@@ -69,5 +72,6 @@ HELP
             );
 
         $this->fcmClient->sendMessage($message);
+        $io->success('Done');
     }
 }

@@ -10,7 +10,7 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\DependencyInjection;
 
-use Fresh\FirebaseCloudMessagingBundle\DependencyInjection\FreshFirebaseCloudMessagingBundleExtension;
+use Fresh\FirebaseCloudMessagingBundle\DependencyInjection\FreshFirebaseCloudMessagingExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class FreshFirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var FreshFirebaseCloudMessagingBundleExtension */
+    /** @var FreshFirebaseCloudMessagingExtension */
     private $extension;
 
     /** @var ContainerBuilder */
@@ -31,9 +31,14 @@ class FreshFirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_
      */
     protected function setUp()
     {
-        $this->extension = new FreshFirebaseCloudMessagingBundleExtension();
+        $this->extension = new FreshFirebaseCloudMessagingExtension();
         $this->container = new ContainerBuilder();
         $this->container->registerExtension($this->extension);
+    }
+
+    public function testGetAlias()
+    {
+        $this->assertSame('fresh_firebase_cloud_messaging', $this->extension->getAlias());
     }
 
     public function testLoadExtension()
@@ -45,5 +50,6 @@ class FreshFirebaseCloudMessagingBundleExtensionTest extends \PHPUnit_Framework_
         $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.sender_id'));
         $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.server_key'));
         $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.endpoint'));
+        $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.guzzle_timeout'));
     }
 }
