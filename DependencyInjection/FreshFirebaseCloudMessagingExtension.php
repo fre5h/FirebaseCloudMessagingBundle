@@ -33,17 +33,9 @@ class FreshFirebaseCloudMessagingExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('firebase_cloud_messaging.sender_id', $config['messaging_sender_id']);
+        $container->setParameter('firebase_cloud_messaging.sender_id', $config['sender_id']);
         $container->setParameter('firebase_cloud_messaging.server_key', $config['server_key']);
         $container->setParameter('firebase_cloud_messaging.endpoint', $config['endpoint']);
         $container->setParameter('firebase_cloud_messaging.guzzle_timeout', $config['guzzle_timeout']);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAlias()
-    {
-        return 'fresh_firebase_cloud_messaging';
     }
 }

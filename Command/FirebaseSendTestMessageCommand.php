@@ -10,8 +10,10 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Command;
 
-use Fresh\FirebaseCloudMessaging\Client;
+use Fresh\FirebaseCloudMessaging\Client as FirebaseCloudMessagingClient;
 use Fresh\FirebaseCloudMessaging\Message\MessageFactory;
+use Fresh\FirebaseCloudMessaging\Message\Part\Options\OptionsFactory;
+use Fresh\FirebaseCloudMessaging\Message\Part\Options\Priority;
 use Fresh\FirebaseCloudMessaging\Message\Part\Payload\PayloadFactory;
 use Fresh\FirebaseCloudMessaging\Message\Part\Target\TargetFactory;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -21,11 +23,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
- * Class FirebaseTestPushCommand.
+ * Class FirebaseSendTestMessageCommand.
  */
-class FirebaseTestPushCommand extends ContainerAwareCommand
+class FirebaseSendTestMessageCommand extends ContainerAwareCommand
 {
-    /** @var Client */
+    /** @var FirebaseCloudMessagingClient */
     private $fcmClient;
 
     /**
@@ -33,15 +35,15 @@ class FirebaseTestPushCommand extends ContainerAwareCommand
      */
     protected function configure()
     {
-        $this->setName('firebase:message:send-test')
-             ->setDescription('Sends test message to the specific registration token')
+        $this->setName('firebase:send:test-message')
+             ->setDescription('Sends test message in the "notification" payload to the specific registration token')
              ->setHelp(<<<HELP
-The <info>%command.name%</info> sends test message to the specific registration token.
+The <info>%command.name%</info> sends test message in the "notification" payload to the specific registration token.
 
-<info>%command.full_name% xxx:xx:xx</info>
+<info>%command.full_name% registration_token</info>
 HELP
              )
-             ->addArgument('registration_token', InputArgument::REQUIRED, 'Registration token of recipient');
+             ->addArgument('registration_token', InputArgument::REQUIRED, 'Registration token of a recipient');
     }
 
     /**
@@ -60,15 +62,20 @@ HELP
         $io = new SymfonyStyle($input, $output);
         $io->title('Sending message...');
 
-        $message = MessageFactory::createWebMessage()
+        $message = MessageFactory::createAndroidMessage()
             ->setTarget(
                 TargetFactory::createSingleRecipientTarget()
                     ->setRegistrationToken($input->getArgument('registration_token'))
             )
+            ->setOptions(
+                OptionsFactory::createOptions()
+                    ->setPriority(Priority::NORMAL)
+                    ->setCollapseKey('test')
+            )
             ->setPayload(
-                PayloadFactory::createNotificationWebPayload()
-                    ->setTitle('test')
-                    ->setBody('hello world')
+                PayloadFactory::createNotificationAndroidPayload()
+                    ->setTitle('Hello world!')
+                    ->setBody('It is a simple test message from the console command.')
             );
 
         $this->fcmClient->sendMessage($message);

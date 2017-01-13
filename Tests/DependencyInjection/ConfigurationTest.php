@@ -50,12 +50,12 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->assertProcessedConfigurationEquals(
             [
                 [
-                    'messaging_sender_id' => 1234567890,
+                    'sender_id' => 1234567890,
                     'server_key' => 'some_key',
                 ],
             ],
             [
-                'messaging_sender_id' => 1234567890,
+                'sender_id' => 1234567890,
                 'server_key' => 'some_key',
                 'endpoint' => 'https://fcm.googleapis.com/fcm/send',
                 'guzzle_timeout' => 50,
