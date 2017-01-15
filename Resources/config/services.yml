@@ -1,5 +1,6 @@
 parameters:
     firebase_cloud_messaging.client.class: Fresh\FirebaseCloudMessaging\Client
+    firebase_cloud_messaging.client_factory.class: Fresh\FirebaseCloudMessaging\ClientFactory
     firebase_cloud_messaging.symfony_dispatcher.class: Fresh\FirebaseCloudMessagingBundle\Service\SymfonyEventDispatcher
 
 services:
@@ -9,12 +10,19 @@ services:
         arguments:
             - "@event_dispatcher"
 
-    firebase_cloud_messaging.client:
-        class: "%firebase_cloud_messaging.client.class%"
+    firebase_cloud_messaging.client_factory:
+        class: "%firebase_cloud_messaging.client_factory.class%"
+        public: false
         arguments:
-            - "%firebase_cloud_messaging.sender_id%"
             - "%firebase_cloud_messaging.server_key%"
             - "%firebase_cloud_messaging.endpoint%"
             - "%firebase_cloud_messaging.guzzle_timeout%"
+
+    firebase_cloud_messaging.client:
+        class: "%firebase_cloud_messaging.client.class%"
+        factory:
+            - "@firebase_cloud_messaging.client_factory"
+            - createClient
         calls:
             - [setEventDispatcher, ["@firebase_cloud_messaging.symfony_dispatcher"]]
+            - [setAllowedToDispatchEvents, [true]]

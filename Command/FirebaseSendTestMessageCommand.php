@@ -16,6 +16,7 @@ use Fresh\FirebaseCloudMessaging\Message\Part\Options\OptionsFactory;
 use Fresh\FirebaseCloudMessaging\Message\Part\Options\Priority;
 use Fresh\FirebaseCloudMessaging\Message\Part\Payload\PayloadFactory;
 use Fresh\FirebaseCloudMessaging\Message\Part\Target\TargetFactory;
+use Fresh\FirebaseCloudMessaging\Response\MulticastMessageResponseInterface;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -29,6 +30,9 @@ class FirebaseSendTestMessageCommand extends ContainerAwareCommand
 {
     /** @var FirebaseCloudMessagingClient */
     private $fcmClient;
+
+    /** @var SymfonyStyle */
+    private $io;
 
     /**
      * {@inheritDoc}
@@ -52,6 +56,7 @@ HELP
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
         $this->fcmClient = $this->getContainer()->get('firebase_cloud_messaging.client');
+        $this->io = new SymfonyStyle($input, $output);
     }
 
     /**
@@ -59,8 +64,7 @@ HELP
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io = new SymfonyStyle($input, $output);
-        $io->title('Sending message...');
+        $this->io->title('Sending message...');
 
         $message = MessageFactory::createAndroidMessage()
             ->setTarget(
@@ -75,10 +79,68 @@ HELP
             ->setPayload(
                 PayloadFactory::createNotificationAndroidPayload()
                     ->setTitle('Hello world!')
-                    ->setBody('It is a simple test message from the console command.')
+                    ->setBody('It is a test message, ignore it.')
             );
 
-        $this->fcmClient->sendMessage($message);
-        $io->success('Done');
+        $response = $this->fcmClient->sendMessage($message);
+
+        if ($response instanceof MulticastMessageResponseInterface) {
+            $this->showResponseDetails($response);
+        }
+
+        $this->io->success('Done');
+    }
+
+    private function showResponseDetails(MulticastMessageResponseInterface $response)
+    {
+        if ($response->hasSuccessfulMessageResults()) {
+            $this->io->title('Successfully sent messages');
+
+            $headers = ['Registration Token', 'Message Id'];
+            $rows = [];
+
+            foreach ($response->getSuccessfulMessageResults() as $messageResult) {
+                $rows[] = [
+                    $this->shortinizeToken($messageResult->getToken()),
+                    $messageResult->getMessageId(),
+                ];
+            }
+
+            $this->io->table($headers, $rows);
+        }
+
+//        if ($response->hasCanonicalTokenMessageResults()) {
+//            foreach ($response->getCanonicalTokenMessageResults() as $messageResult) {
+//                $rows[] = [
+//                    $messageResult->getToken(),
+//                    $messageResult->getMessageId(),
+//                    $messageResult->getCanonicalToken(),
+//                    null,
+//                ];
+//            }
+//        }
+//
+//        if ($response->hasFailedMessageResults()) {
+//            foreach ($response->getFailedMessageResults() as $messageResult) {
+//                $rows[] = [
+//                    $messageResult->getToken(),
+//                    null,
+//                    null,
+//                    $messageResult->getError(),
+//                ];
+//            }
+//        }
+    }
+
+    /**
+     * @param string $token
+     *
+     * @return string
+     */
+    private function shortinizeToken($token)
+    {
+        $positionOfColon = strpos($token, ':');
+
+        return substr($token, 0, $positionOfColon).str_pad('', $positionOfColon, '.').substr($token, -$positionOfColon, $positionOfColon);
     }
 }
