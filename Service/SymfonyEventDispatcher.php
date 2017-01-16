@@ -14,7 +14,7 @@ use Fresh\FirebaseCloudMessaging\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface as SymfonyEventDispatcherInterface;
 
 /**
- * Class SymfonyDispatcher.
+ * Class SymfonyEventDispatcher.
  */
 class SymfonyEventDispatcher implements EventDispatcherInterface
 {
