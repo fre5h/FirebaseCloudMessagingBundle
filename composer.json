@@ -39,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Fresh\\FirebaseCloudMessagingBundle\\": "Tests/"
+            "Fresh\\FirebaseCloudMessagingBundle\\Tests\\": "Tests/"
         }
     }
 }
