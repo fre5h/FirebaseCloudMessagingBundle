@@ -41,7 +41,7 @@ class FirebaseSendTestMessageCommand extends ContainerAwareCommand
     {
         $this->setName('firebase:send:test-message')
              ->setDescription('Sends test message in the "notification" payload to the specific registration token')
-             ->setHelp(<<<HELP
+             ->setHelp(<<<'HELP'
 The <info>%command.name%</info> sends test message in the "notification" payload to the specific registration token.
 
 <info>%command.full_name% registration_token</info>
