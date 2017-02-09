@@ -1,7 +1,7 @@
 parameters:
     firebase_cloud_messaging.client.class: Fresh\FirebaseCloudMessaging\Client
     firebase_cloud_messaging.client_factory.class: Fresh\FirebaseCloudMessaging\ClientFactory
-    firebase_cloud_messaging.symfony_dispatcher.class: Fresh\FirebaseCloudMessagingBundle\Service\SymfonyEventDispatcher
+    firebase_cloud_messaging.symfony_dispatcher.class: Fresh\FirebaseCloudMessagingBundle\Event\SymfonyEventDispatcher
 
 services:
     firebase_cloud_messaging.symfony_dispatcher:
