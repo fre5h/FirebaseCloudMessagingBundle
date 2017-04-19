@@ -10,9 +10,10 @@ Provides integration with Firebase Cloud Messaging API in Symfony applications.
 [![License](https://img.shields.io/packagist/l/fresh/firebase-cloud-messaging-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/firebase-cloud-messaging-bundle)
 [![Latest Stable Version](https://img.shields.io/packagist/v/fresh/firebase-cloud-messaging-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/firebase-cloud-messaging-bundle)
 [![Total Downloads](https://img.shields.io/packagist/dt/fresh/firebase-cloud-messaging-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/firebase-cloud-messaging-bundle)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/6334434e-48fc-4499-a60f-46815f7863c5.svg?style=flat-square)](https://insight.sensiolabs.com/projects/6334434e-48fc-4499-a60f-46815f7863c5)
 [![StyleCI](https://styleci.io/repos/72566387/shield?style=flat-square)](https://styleci.io/repos/72566387)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg?style=flat-square)](https://gitter.im/fre5h/FirebaseCloudMessagingBundle)
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/6334434e-48fc-4499-a60f-46815f7863c5/small.png)](https://insight.sensiolabs.com/projects/6334434e-48fc-4499-a60f-46815f7863c5)
 
 TODO
 
