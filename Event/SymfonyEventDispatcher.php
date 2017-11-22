@@ -60,6 +60,7 @@ class SymfonyEventDispatcher implements FirebaseCloudMessagingEventDispatcherInt
                     $eventData->getFailedMessageResults(),
                     $eventData->getCanonicalTokenMessageResults()
                 );
+
                 break;
             case FirebaseEvents::TOPIC_MESSAGE_RESPONSE_EVENT:
                 /** @var TopicMessageResponseEvent $eventData */
@@ -67,6 +68,7 @@ class SymfonyEventDispatcher implements FirebaseCloudMessagingEventDispatcherInt
                     $eventData->getMessageId(),
                     $eventData->getError()
                 );
+
                 break;
             default:
                 throw new \Exception('Unsupported event type');

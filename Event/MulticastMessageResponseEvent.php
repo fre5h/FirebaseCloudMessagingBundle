@@ -35,7 +35,7 @@ class MulticastMessageResponseEvent extends Event implements MulticastMessageRes
      * @param FailedMessageResultCollection|FailedMessageResult[]                 $failureMessageResults
      * @param CanonicalTokenMessageResultCollection|CanonicalTokenMessageResult[] $canonicalTokenMessageResults
      */
-    public function __construct(int $multicastId, SuccessfulMessageResultCollection $successMessageResults, FailedMessageResultCollection $failureMessageResults, CanonicalTokenMessageResultCollection $canonicalTokenMessageResults)
+    public function __construct(int $multicastId, SuccessfulMessageResultCollection $successMessageResults, FailedMessageResultCollection $failureMessageResults, CanonicalTokenMessageResultCollection $canonicalTokenMessageResults)
     {
         $this->multicastId = $multicastId;
         $this->successfulMessageResults = $successMessageResults;
