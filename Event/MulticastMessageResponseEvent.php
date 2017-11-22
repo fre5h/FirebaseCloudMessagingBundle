@@ -2,7 +2,7 @@
 /*
  * This file is part of the FirebaseCloudMessagingBundle
  *
- * (c) Artem Genvald <genvaldartem@gmail.com>
+ * (c) Artem Henvald <genvaldartem@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +23,7 @@ use Symfony\Component\EventDispatcher\Event;
 /**
  * MulticastMessageResponseEvent.
  *
- * @author Artem Genvald <genvaldartem@gmail.com>
+ * @author Artem Henvald <genvaldartem@gmail.com>
  */
 class MulticastMessageResponseEvent extends Event implements MulticastMessageResponseInterface
 {
@@ -35,12 +35,8 @@ class MulticastMessageResponseEvent extends Event implements MulticastMessageRes
      * @param FailedMessageResultCollection|FailedMessageResult[]                 $failureMessageResults
      * @param CanonicalTokenMessageResultCollection|CanonicalTokenMessageResult[] $canonicalTokenMessageResults
      */
-    public function __construct(
-        $multicastId,
-        SuccessfulMessageResultCollection $successMessageResults,
-        FailedMessageResultCollection $failureMessageResults,
-        CanonicalTokenMessageResultCollection $canonicalTokenMessageResults
-    ) {
+    public function __construct(int $multicastId, SuccessfulMessageResultCollection $successMessageResults, FailedMessageResultCollection $failureMessageResults, CanonicalTokenMessageResultCollection $canonicalTokenMessageResults)
+    {
         $this->multicastId = $multicastId;
         $this->successfulMessageResults = $successMessageResults;
         $this->failedMessageResults = $failureMessageResults;

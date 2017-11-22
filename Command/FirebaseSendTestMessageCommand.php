@@ -2,7 +2,7 @@
 /*
  * This file is part of the FirebaseCloudMessagingBundle
  *
- * (c) Artem Genvald <genvaldartem@gmail.com>
+ * (c) Artem Henvald <genvaldartem@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -91,7 +91,7 @@ HELP
         $this->io->success('Done');
     }
 
-    private function showResponseDetails(MulticastMessageResponseInterface $response)
+    private function showResponseDetails(MulticastMessageResponseInterface $response): void
     {
         if ($response->hasSuccessfulMessageResults()) {
             $this->io->title('Successfully sent messages');
@@ -137,10 +137,10 @@ HELP
      *
      * @return string
      */
-    private function shortinizeToken($token)
+    private function shortinizeToken(string $token): string
     {
-        $positionOfColon = strpos($token, ':');
+        $positionOfColon = \strpos($token, ':');
 
-        return substr($token, 0, $positionOfColon).str_pad('', $positionOfColon, '.').substr($token, -$positionOfColon, $positionOfColon);
+        return \substr($token, 0, $positionOfColon).\str_pad('', $positionOfColon, '.').\substr($token, -$positionOfColon, $positionOfColon);
     }
 }

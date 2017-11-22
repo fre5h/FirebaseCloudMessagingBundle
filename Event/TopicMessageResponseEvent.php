@@ -2,7 +2,7 @@
 /*
  * This file is part of the FirebaseCloudMessagingBundle
  *
- * (c) Artem Genvald <genvaldartem@gmail.com>
+ * (c) Artem Henvald <genvaldartem@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -17,7 +17,7 @@ use Symfony\Component\EventDispatcher\Event;
  *
  * @see https://firebase.google.com/docs/cloud-messaging/http-server-ref#table6
  *
- * @author Artem Genvald <genvaldartem@gmail.com>
+ * @author Artem Henvald <genvaldartem@gmail.com>
  */
 class TopicMessageResponseEvent extends Event
 {
@@ -40,7 +40,7 @@ class TopicMessageResponseEvent extends Event
      * @param int    $messageId
      * @param string $error
      */
-    public function __construct($messageId, $error)
+    public function __construct(int $messageId, string $error)
     {
         $this->messageId = $messageId;
         $this->error = $error;
@@ -49,7 +49,7 @@ class TopicMessageResponseEvent extends Event
     /**
      * @return int
      */
-    public function getMessageId()
+    public function getMessageId(): int
     {
         return $this->messageId;
     }
@@ -57,7 +57,7 @@ class TopicMessageResponseEvent extends Event
     /**
      * @return string
      */
-    public function getError()
+    public function getError(): string
     {
         return $this->error;
     }

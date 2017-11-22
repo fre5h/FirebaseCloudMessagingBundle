@@ -2,7 +2,7 @@
 /*
  * This file is part of the FirebaseCloudMessagingBundle
  *
- * (c) Artem Genvald <genvaldartem@gmail.com>
+ * (c) Artem Henvald <genvaldartem@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,14 +16,15 @@ use Fresh\FirebaseCloudMessaging\Response\MessageResult\Collection\CanonicalToke
 use Fresh\FirebaseCloudMessaging\Response\MessageResult\Collection\FailedMessageResultCollection;
 use Fresh\FirebaseCloudMessaging\Response\MessageResult\Collection\SuccessfulMessageResultCollection;
 use Fresh\FirebaseCloudMessagingBundle\Event\SymfonyEventDispatcher;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface as SymfonyEventDispatcherInterface;
 
 /**
  * SymfonyEventDispatcherTest.
  *
- * @author Artem Genvald <genvaldartem@gmail.com>
+ * @author Artem Henvald <genvaldartem@gmail.com>
  */
-class SymfonyEventDispatcherTest extends \PHPUnit_Framework_TestCase
+class SymfonyEventDispatcherTest extends TestCase
 {
     public function testDispatchMethod()
     {

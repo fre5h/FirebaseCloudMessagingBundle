@@ -2,7 +2,7 @@
 /*
  * This file is part of the FirebaseCloudMessagingBundle
  *
- * (c) Artem Genvald <genvaldartem@gmail.com>
+ * (c) Artem Henvald <genvaldartem@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +13,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Event;
 use Fresh\FirebaseCloudMessaging\Event\EventInterface;
 use Fresh\FirebaseCloudMessaging\Event\FirebaseEvents;
 use Fresh\FirebaseCloudMessaging\EventDispatcherInterface as FirebaseCloudMessagingEventDispatcherInterface;
+use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface as SymfonyEventDispatcherInterface;
 
 /**
@@ -48,11 +49,11 @@ class SymfonyEventDispatcher implements FirebaseCloudMessagingEventDispatcherInt
      *
      * @return MulticastMessageResponseEvent|TopicMessageResponseEvent
      */
-    private function getEventData($eventName, EventInterface $eventData)
+    private function getEventData(string $eventName, EventInterface $eventData): Event
     {
         switch ($eventName) {
             case FirebaseEvents::MULTICAST_MESSAGE_RESPONSE_EVENT:
-                /** @var \Fresh\FirebaseCloudMessaging\Event\MulticastMessageResponseEvent $eventData */
+                /** @var MulticastMessageResponseEvent $eventData */
                 $event = new MulticastMessageResponseEvent(
                     $eventData->getMulticastId(),
                     $eventData->getSuccessfulMessageResults(),
@@ -61,7 +62,7 @@ class SymfonyEventDispatcher implements FirebaseCloudMessagingEventDispatcherInt
                 );
                 break;
             case FirebaseEvents::TOPIC_MESSAGE_RESPONSE_EVENT:
-                /** @var \Fresh\FirebaseCloudMessaging\Event\TopicMessageResponseEvent $eventData */
+                /** @var TopicMessageResponseEvent $eventData */
                 $event = new TopicMessageResponseEvent(
                     $eventData->getMessageId(),
                     $eventData->getError()
