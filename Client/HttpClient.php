@@ -22,6 +22,7 @@ use GuzzleHttp\Client as GuzzleClient;
 final class HttpClient extends GuzzleClient
 {
     private const DEFAULT_ENDPOINT = 'https://fcm.googleapis.com/fcm/send';
+
     private const DEFAULT_GUZZLE_TIMEOUT = 50;
 
     /**

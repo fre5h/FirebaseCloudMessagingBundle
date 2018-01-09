@@ -17,8 +17,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Response\MessageResult;
  *
  * @author Artem Henvald <genvaldartem@gmail.com>
  */
-class CanonicalTokenMessageResult extends AbstractSuccessfulMessageResult implements
-    CanonicalTokenMessageResultInterface
+class CanonicalTokenMessageResult extends AbstractSuccessfulMessageResult implements CanonicalTokenMessageResultInterface
 {
     /** @var string */
     private $canonicalToken = '';
