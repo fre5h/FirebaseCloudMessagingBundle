@@ -50,15 +50,16 @@ class FirebaseSendTestMessageCommand extends Command
      */
     protected function configure()
     {
-        $this->setName('firebase:send:test-message')
-             ->setDescription('Sends test message with the "notification" payload to the specific registration token')
-             ->setHelp(<<<'HELP'
+        $this
+            ->setName('firebase:send:test-message')
+            ->setDescription('Sends test message with the "notification" payload to the specific registration token')
+            ->setHelp(<<<'HELP'
 The <info>%command.name%</info> sends test message with the "notification" payload to the specific registration token.
 
 <info>%command.full_name% registration_token</info>
 HELP
-             )
-             ->addArgument('registration_token', InputArgument::REQUIRED, 'Registration token of a recipient');
+            )
+            ->addArgument('registration_token', InputArgument::REQUIRED, 'Registration token of a recipient');
     }
 
     /**
