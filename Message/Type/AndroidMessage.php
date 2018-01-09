@@ -37,7 +37,7 @@ class AndroidMessage extends AbstractMessage
     /**
      * @return AndroidPayloadInterface|CommonPayloadInterface
      */
-    public function getPayload(): CommonPayloadInterface
+    public function getPayload(): AndroidPayloadInterface
     {
         return $this->payload;
     }

@@ -21,7 +21,7 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\WebPayloadInterface;
  */
 class WebNotificationPayload extends AbstractCommonNotificationPayload implements WebPayloadInterface
 {
-    /** @var string */
+    /** @var string|null */
     private $icon;
 
     /**
@@ -37,9 +37,9 @@ class WebNotificationPayload extends AbstractCommonNotificationPayload implement
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getIcon(): string
+    public function getIcon(): ?string
     {
         return $this->icon;
     }

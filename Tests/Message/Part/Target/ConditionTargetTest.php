@@ -25,7 +25,6 @@ class ConditionTargetTest extends TestCase
     {
         $conditionTarget = new ConditionTarget();
         $this->assertInstanceOf(TargetInterface::class, $conditionTarget);
-        $this->assertNull($conditionTarget->getCondition());
     }
 
     public function testSetGetCondition()

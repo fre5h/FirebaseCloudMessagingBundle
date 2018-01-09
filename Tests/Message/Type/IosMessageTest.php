@@ -28,9 +28,6 @@ class IosMessageTest extends TestCase
     {
         $iosMessage = new IosMessage();
         $this->assertInstanceOf(AbstractMessage::class, $iosMessage);
-        $this->assertNull($iosMessage->getTarget());
-        $this->assertNull($iosMessage->getOptions());
-        $this->assertNull($iosMessage->getPayload());
     }
 
     public function testSetGetTarget()

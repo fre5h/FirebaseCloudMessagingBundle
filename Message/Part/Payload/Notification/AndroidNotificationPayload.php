@@ -21,13 +21,13 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\AndroidPayloadInterf
  */
 class AndroidNotificationPayload extends AbstractMobileNotificationPayload implements AndroidPayloadInterface
 {
-    /** @var string */
+    /** @var string|null */
     private $icon;
 
-    /** @var string */
+    /** @var string|null */
     private $tag;
 
-    /** @var string */
+    /** @var string|null */
     private $color;
 
     /**
@@ -43,9 +43,9 @@ class AndroidNotificationPayload extends AbstractMobileNotificationPayload imple
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getIcon(): string
+    public function getIcon(): ?string
     {
         return $this->icon;
     }
@@ -63,9 +63,9 @@ class AndroidNotificationPayload extends AbstractMobileNotificationPayload imple
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTag(): string
+    public function getTag(): ?string
     {
         return $this->tag;
     }
@@ -83,9 +83,9 @@ class AndroidNotificationPayload extends AbstractMobileNotificationPayload imple
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getColor(): string
+    public function getColor(): ?string
     {
         return $this->color;
     }

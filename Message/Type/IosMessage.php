@@ -37,7 +37,7 @@ class IosMessage extends AbstractMessage
     /**
      * @return IosPayloadInterface|CommonPayloadInterface
      */
-    public function getPayload(): CommonPayloadInterface
+    public function getPayload(): IosPayloadInterface
     {
         return $this->payload;
     }

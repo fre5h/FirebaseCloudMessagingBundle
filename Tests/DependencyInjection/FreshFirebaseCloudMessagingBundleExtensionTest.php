@@ -61,7 +61,5 @@ YAML;
         $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.server_key'));
         $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.endpoint'));
         $this->assertTrue($this->container->hasParameter('firebase_cloud_messaging.guzzle_timeout'));
-
-        $this->assertTrue($this->container->has('firebase_cloud_messaging.client'));
     }
 }

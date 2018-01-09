@@ -37,7 +37,7 @@ class WebMessage extends AbstractMessage
     /**
      * @return WebPayloadInterface|CommonPayloadInterface
      */
-    public function getPayload(): CommonPayloadInterface
+    public function getPayload(): WebPayloadInterface
     {
         return $this->payload;
     }

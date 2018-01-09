@@ -19,19 +19,19 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Notification;
  */
 abstract class AbstractMobileNotificationPayload extends AbstractCommonNotificationPayload
 {
-    /** @var string */
+    /** @var string|null */
     private $sound;
 
-    /** @var string */
+    /** @var string|null */
     private $bodyLocKey;
 
-    /** @var string[] */
+    /** @var string[]|null */
     private $bodyLocArgs;
 
-    /** @var string */
+    /** @var string|null */
     private $titleLocKey;
 
-    /** @var string[] */
+    /** @var string[]|null */
     private $titleLocArgs;
 
     /**
@@ -47,9 +47,9 @@ abstract class AbstractMobileNotificationPayload extends AbstractCommonNotificat
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSound(): string
+    public function getSound(): ?string
     {
         return $this->sound;
     }
@@ -67,9 +67,9 @@ abstract class AbstractMobileNotificationPayload extends AbstractCommonNotificat
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBodyLocKey(): string
+    public function getBodyLocKey(): ?string
     {
         return $this->bodyLocKey;
     }
@@ -90,9 +90,9 @@ abstract class AbstractMobileNotificationPayload extends AbstractCommonNotificat
     }
 
     /**
-     * @return string[]
+     * @return string[]|null
      */
-    public function getBodyLocArgs(): array
+    public function getBodyLocArgs(): ?array
     {
         return $this->bodyLocArgs;
     }
@@ -110,9 +110,9 @@ abstract class AbstractMobileNotificationPayload extends AbstractCommonNotificat
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTitleLocKey(): string
+    public function getTitleLocKey(): ?string
     {
         return $this->titleLocKey;
     }
@@ -133,9 +133,9 @@ abstract class AbstractMobileNotificationPayload extends AbstractCommonNotificat
     }
 
     /**
-     * @return string[]
+     * @return string[]|null
      */
-    public function getTitleLocArgs(): array
+    public function getTitleLocArgs(): ?array
     {
         return $this->titleLocArgs;
     }

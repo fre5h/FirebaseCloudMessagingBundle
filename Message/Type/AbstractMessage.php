@@ -75,5 +75,5 @@ abstract class AbstractMessage
     /**
      * @return CommonPayloadInterface
      */
-    abstract public function getPayload(): CommonPayloadInterface;
+    abstract public function getPayload();
 }

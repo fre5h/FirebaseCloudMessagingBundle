@@ -28,9 +28,6 @@ class WebMessageTest extends TestCase
     {
         $webMessage = new WebMessage();
         $this->assertInstanceOf(AbstractMessage::class, $webMessage);
-        $this->assertNull($webMessage->getTarget());
-        $this->assertNull($webMessage->getOptions());
-        $this->assertNull($webMessage->getPayload());
     }
 
     public function testSetGetTarget()

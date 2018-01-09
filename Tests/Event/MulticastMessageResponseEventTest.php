@@ -34,12 +34,12 @@ class MulticastMessageResponseEventTest extends TestCase
         $this->assertSame($multicastId, $event->getMulticastId());
 
         $this->assertSame($success, $event->getSuccessfulMessageResults());
-        $this->assertCount(1, $event->getSuccessfulMessageResults());
+        $this->assertCount(0, $event->getSuccessfulMessageResults());
 
         $this->assertSame($failure, $event->getFailedMessageResults());
-        $this->assertCount(1, $event->getFailedMessageResults());
+        $this->assertCount(0, $event->getFailedMessageResults());
 
         $this->assertSame($canonicalIds, $event->getCanonicalTokenMessageResults());
-        $this->assertCount(1, $event->getCanonicalTokenMessageResults());
+        $this->assertCount(0, $event->getCanonicalTokenMessageResults());
     }
 }

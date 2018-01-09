@@ -21,7 +21,7 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\IosPayloadInterface;
  */
 class IosNotificationPayload extends AbstractMobileNotificationPayload implements IosPayloadInterface
 {
-    /** @var string */
+    /** @var string|null */
     private $badge;
 
     /**
@@ -37,9 +37,9 @@ class IosNotificationPayload extends AbstractMobileNotificationPayload implement
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBadge(): string
+    public function getBadge(): ?string
     {
         return $this->badge;
     }

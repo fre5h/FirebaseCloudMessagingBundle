@@ -31,8 +31,6 @@ class CombinedPayloadTest extends TestCase
         $this->assertInstanceOf(AndroidPayloadInterface::class, $combinedPayload);
         $this->assertInstanceOf(IosPayloadInterface::class, $combinedPayload);
         $this->assertInstanceOf(WebPayloadInterface::class, $combinedPayload);
-        $this->assertNull($combinedPayload->getDataPayload());
-        $this->assertNull($combinedPayload->getNotificationPayload());
     }
 
     public function setGetDataPayload()

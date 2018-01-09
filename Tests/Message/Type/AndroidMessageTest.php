@@ -28,9 +28,6 @@ class AndroidMessageTest extends TestCase
     {
         $androidMessage = new AndroidMessage();
         $this->assertInstanceOf(AbstractMessage::class, $androidMessage);
-        $this->assertNull($androidMessage->getTarget());
-        $this->assertNull($androidMessage->getOptions());
-        $this->assertNull($androidMessage->getPayload());
     }
 
     public function testSetGetTarget()
