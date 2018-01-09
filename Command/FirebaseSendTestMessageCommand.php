@@ -8,16 +8,18 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Command;
 
-use Fresh\FirebaseCloudMessaging\Client as FirebaseCloudMessagingClient;
-use Fresh\FirebaseCloudMessaging\Message\MessageFactory;
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\OptionsFactory;
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\Priority;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\PayloadFactory;
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\TargetFactory;
-use Fresh\FirebaseCloudMessaging\Response\MulticastMessageResponseInterface;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Fresh\FirebaseCloudMessagingBundle\Client\FirebaseClient;
+use Fresh\FirebaseCloudMessagingBundle\Message\MessageFactory;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\OptionsFactory;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Priority;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\PayloadFactory;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\TargetFactory;
+use Fresh\FirebaseCloudMessagingBundle\Response\MulticastMessageResponseInterface;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -26,13 +28,22 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 /**
  * Class FirebaseSendTestMessageCommand.
  */
-class FirebaseSendTestMessageCommand extends ContainerAwareCommand
+class FirebaseSendTestMessageCommand extends Command
 {
-    /** @var FirebaseCloudMessagingClient */
-    private $fcmClient;
+    /** @var FirebaseClient */
+    private $firebaseClient;
 
     /** @var SymfonyStyle */
     private $io;
+
+    /**
+     * @param FirebaseClient $firebaseClient
+     */
+    public function __construct(FirebaseClient $firebaseClient)
+    {
+        parent::__construct();
+        $this->firebaseClient = $firebaseClient;
+    }
 
     /**
      * {@inheritdoc}
@@ -40,9 +51,9 @@ class FirebaseSendTestMessageCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this->setName('firebase:send:test-message')
-             ->setDescription('Sends test message in the "notification" payload to the specific registration token')
+             ->setDescription('Sends test message with the "notification" payload to the specific registration token')
              ->setHelp(<<<'HELP'
-The <info>%command.name%</info> sends test message in the "notification" payload to the specific registration token.
+The <info>%command.name%</info> sends test message with the "notification" payload to the specific registration token.
 
 <info>%command.full_name% registration_token</info>
 HELP
@@ -55,7 +66,6 @@ HELP
      */
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
-        $this->fcmClient = $this->getContainer()->get('firebase_cloud_messaging.client');
         $this->io = new SymfonyStyle($input, $output);
     }
 
@@ -82,7 +92,7 @@ HELP
                     ->setBody('It is a test message, ignore it.')
             );
 
-        $response = $this->fcmClient->sendMessage($message);
+        $response = $this->firebaseClient->sendMessage($message);
 
         if ($response instanceof MulticastMessageResponseInterface) {
             $this->showResponseDetails($response);

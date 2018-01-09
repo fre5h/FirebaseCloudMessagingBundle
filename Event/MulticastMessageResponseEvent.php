@@ -8,16 +8,18 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Event;
 
-use Fresh\FirebaseCloudMessaging\Response\MessageResult\CanonicalTokenMessageResult;
-use Fresh\FirebaseCloudMessaging\Response\MessageResult\Collection\CanonicalTokenMessageResultCollection;
-use Fresh\FirebaseCloudMessaging\Response\MessageResult\Collection\FailedMessageResultCollection;
-use Fresh\FirebaseCloudMessaging\Response\MessageResult\Collection\SuccessfulMessageResultCollection;
-use Fresh\FirebaseCloudMessaging\Response\MessageResult\FailedMessageResult;
-use Fresh\FirebaseCloudMessaging\Response\MessageResult\SuccessfulMessageResult;
-use Fresh\FirebaseCloudMessaging\Response\MulticastMessageResponseInterface;
-use Fresh\FirebaseCloudMessaging\Response\MulticastMessageResponseTrait;
+use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\CanonicalTokenMessageResult;
+use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\Collection\CanonicalTokenMessageResultCollection;
+use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\Collection\FailedMessageResultCollection;
+use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\Collection\SuccessfulMessageResultCollection;
+use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\FailedMessageResult;
+use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\SuccessfulMessageResult;
+use Fresh\FirebaseCloudMessagingBundle\Response\MulticastMessageResponseInterface;
+use Fresh\FirebaseCloudMessagingBundle\Response\MulticastMessageResponseTrait;
 use Symfony\Component\EventDispatcher\Event;
 
 /**

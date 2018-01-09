@@ -1,28 +1,25 @@
-parameters:
-    firebase_cloud_messaging.client.class: Fresh\FirebaseCloudMessaging\Client
-    firebase_cloud_messaging.client_factory.class: Fresh\FirebaseCloudMessaging\ClientFactory
-    firebase_cloud_messaging.symfony_dispatcher.class: Fresh\FirebaseCloudMessagingBundle\Event\SymfonyEventDispatcher
-
 services:
-    firebase_cloud_messaging.symfony_dispatcher:
-        class: "%firebase_cloud_messaging.symfony_dispatcher.class%"
+    _defaults:
+        autowire: true
+        autoconfigure: true
         public: false
-        arguments:
-            - "@event_dispatcher"
+        bind:
+#            $senderId: '%firebase_cloud_messaging.sender_id%'
+            $serverKey: '%firebase_cloud_messaging.server_key%'
+            $endpoint: '%firebase_cloud_messaging.endpoint%'
+            $guzzleTimeOut: '%firebase_cloud_messaging.guzzle_timeout%'
 
-    firebase_cloud_messaging.client_factory:
-        class: "%firebase_cloud_messaging.client_factory.class%"
-        public: false
-        arguments:
-            - "%firebase_cloud_messaging.server_key%"
-            - "%firebase_cloud_messaging.endpoint%"
-            - "%firebase_cloud_messaging.guzzle_timeout%"
+    Fresh\FirebaseCloudMessagingBundle\Client\FirebaseClient:
+        class: Fresh\FirebaseCloudMessagingBundle\Client\FirebaseClient
 
-    firebase_cloud_messaging.client:
-        class: "%firebase_cloud_messaging.client.class%"
-        factory:
-            - "@firebase_cloud_messaging.client_factory"
-            - createClient
-        calls:
-            - [setEventDispatcher, ["@firebase_cloud_messaging.symfony_dispatcher"]]
-            - [setAllowedToDispatchEvents, [true]]
+    Fresh\FirebaseCloudMessagingBundle\Client\HttpClient:
+        class: Fresh\FirebaseCloudMessagingBundle\Client\HttpClient
+
+    Fresh\FirebaseCloudMessagingBundle\Response\ResponseProcessor:
+        class: Fresh\FirebaseCloudMessagingBundle\Response\ResponseProcessor
+
+    Fresh\FirebaseCloudMessagingBundle\Message\Builder\MessageBuilder:
+        class: Fresh\FirebaseCloudMessagingBundle\Message\Builder\MessageBuilder
+
+    Fresh\FirebaseCloudMessagingBundle\Command\:
+        resource: '../../Command/'
