@@ -10,10 +10,10 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Target;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\ConditionTarget;
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\MulticastTarget;
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\SingleRecipientTarget;
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\TargetFactory;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\ConditionTarget;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\MulticastTarget;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\SingleRecipientTarget;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\TargetFactory;
 use PHPUnit\Framework\TestCase;
 
 /**

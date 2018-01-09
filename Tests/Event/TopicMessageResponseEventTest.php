@@ -10,7 +10,7 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Event;
 
-use Fresh\FirebaseCloudMessaging\Event\TopicMessageResponseEvent;
+use Fresh\FirebaseCloudMessagingBundle\Event\TopicMessageResponseEvent;
 use PHPUnit\Framework\TestCase;
 
 /**

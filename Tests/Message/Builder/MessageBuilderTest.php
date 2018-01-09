@@ -10,7 +10,7 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Builder;
 
-use Fresh\FirebaseCloudMessaging\Message\Builder\MessageBuilder;
+use Fresh\FirebaseCloudMessagingBundle\Message\Builder\MessageBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**

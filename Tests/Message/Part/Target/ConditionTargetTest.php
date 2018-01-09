@@ -10,8 +10,8 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Target;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\ConditionTarget;
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\TargetInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\ConditionTarget;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\TargetInterface;
 use PHPUnit\Framework\TestCase;
 
 /**

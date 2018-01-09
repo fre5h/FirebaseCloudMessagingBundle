@@ -10,11 +10,11 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Type;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\Options;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\Notification\WebNotificationPayload;
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\MulticastTarget;
-use Fresh\FirebaseCloudMessaging\Message\Type\AbstractMessage;
-use Fresh\FirebaseCloudMessaging\Message\Type\WebMessage;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Options;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Notification\WebNotificationPayload;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\MulticastTarget;
+use Fresh\FirebaseCloudMessagingBundle\Message\Type\AbstractMessage;
+use Fresh\FirebaseCloudMessagingBundle\Message\Type\WebMessage;
 use PHPUnit\Framework\TestCase;
 
 /**

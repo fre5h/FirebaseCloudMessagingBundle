@@ -10,8 +10,8 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Target;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\SingleRecipientTarget;
-use Fresh\FirebaseCloudMessaging\Message\Part\Target\TargetInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\SingleRecipientTarget;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\TargetInterface;
 use PHPUnit\Framework\TestCase;
 
 /**

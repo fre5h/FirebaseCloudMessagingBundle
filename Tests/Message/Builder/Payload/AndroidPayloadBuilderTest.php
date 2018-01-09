@@ -10,10 +10,10 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Builder\Payload;
 
-use Fresh\FirebaseCloudMessaging\Message\Builder\Payload\AbstractPayloadBuilder;
-use Fresh\FirebaseCloudMessaging\Message\Builder\Payload\AndroidPayloadBuilder;
-use Fresh\FirebaseCloudMessaging\Message\Builder\Payload\PayloadBuilderInterface;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\Notification\AndroidNotificationPayload;
+use Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload\AbstractPayloadBuilder;
+use Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload\AndroidPayloadBuilder;
+use Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload\PayloadBuilderInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Notification\AndroidNotificationPayload;
 use PHPUnit\Framework\TestCase;
 
 /**

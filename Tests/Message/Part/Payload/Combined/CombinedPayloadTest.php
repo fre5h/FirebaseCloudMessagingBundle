@@ -10,12 +10,12 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Payload\Combined;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\AndroidPayloadInterface;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\Combined\CombinedPayload;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\Data\DataPayload;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\IosPayloadInterface;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\Notification\AndroidNotificationPayload;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\WebPayloadInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\AndroidPayloadInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Combined\CombinedPayload;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Data\DataPayload;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\IosPayloadInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Notification\AndroidNotificationPayload;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\WebPayloadInterface;
 use PHPUnit\Framework\TestCase;
 
 /**

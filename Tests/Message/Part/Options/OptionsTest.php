@@ -10,9 +10,9 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Options;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\Options;
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\OptionsInterface;
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\Priority;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Options;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\OptionsInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Priority;
 use PHPUnit\Framework\TestCase;
 
 /**

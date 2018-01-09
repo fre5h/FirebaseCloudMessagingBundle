@@ -10,8 +10,8 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Options;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\Options;
-use Fresh\FirebaseCloudMessaging\Message\Part\Options\OptionsFactory;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Options;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\OptionsFactory;
 use PHPUnit\Framework\TestCase;
 
 /**

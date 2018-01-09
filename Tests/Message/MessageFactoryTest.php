@@ -10,10 +10,10 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message;
 
-use Fresh\FirebaseCloudMessaging\Message\MessageFactory;
-use Fresh\FirebaseCloudMessaging\Message\Type\AndroidMessage;
-use Fresh\FirebaseCloudMessaging\Message\Type\IosMessage;
-use Fresh\FirebaseCloudMessaging\Message\Type\WebMessage;
+use Fresh\FirebaseCloudMessagingBundle\Message\MessageFactory;
+use Fresh\FirebaseCloudMessagingBundle\Message\Type\AndroidMessage;
+use Fresh\FirebaseCloudMessagingBundle\Message\Type\IosMessage;
+use Fresh\FirebaseCloudMessagingBundle\Message\Type\WebMessage;
 use PHPUnit\Framework\TestCase;
 
 /**

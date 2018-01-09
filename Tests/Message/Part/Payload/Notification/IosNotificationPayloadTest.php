@@ -10,8 +10,8 @@
 
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Payload\Notification;
 
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\IosPayloadInterface;
-use Fresh\FirebaseCloudMessaging\Message\Part\Payload\Notification\IosNotificationPayload;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\IosPayloadInterface;
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Notification\IosNotificationPayload;
 use PHPUnit\Framework\TestCase;
 
 /**
