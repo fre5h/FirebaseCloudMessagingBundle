@@ -54,7 +54,7 @@ interface MulticastMessageResponseInterface extends FirebaseResponseInterface
     /**
      * @return int
      */
-    public function getNumberOfFailedMessageResults(): bool;
+    public function getNumberOfFailedMessageResults(): int;
 
     /**
      * @return bool
