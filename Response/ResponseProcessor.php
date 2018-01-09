@@ -52,7 +52,7 @@ class ResponseProcessor
      *
      * @return FirebaseResponseInterface
      */
-    public function processResponse(AbstractMessage $message, ResponseInterface $response)
+    public function processResponse(AbstractMessage $message, ResponseInterface $response): FirebaseResponseInterface
     {
         $this->message = $message;
 
@@ -94,7 +94,7 @@ class ResponseProcessor
      *
      * @return MulticastMessageResponse
      */
-    private function processHttpOkResponseWithoutError(array $body)
+    private function processHttpOkResponseWithoutError(array $body): MulticastMessageResponse
     {
         $successfulMessageResults = new SuccessfulMessageResultCollection();
         $failedMessageResults = new FailedMessageResultCollection();
@@ -103,11 +103,11 @@ class ResponseProcessor
         if ($this->message->getTarget() instanceof TokenTargetInterface) {
             $numberOfSequentialSentTokens = $this->message->getTarget()->getNumberOfSequentialSentTokens();
 
-            if (isset($body['results']) && $numberOfSequentialSentTokens !== \count($body['results'])) {
+            if (isset($body['results']) && \count($body['results']) !== $numberOfSequentialSentTokens) {
                 throw new \Exception('Mismatch number of sent tokens and results');
             }
 
-            for ($i = 0; $i < $numberOfSequentialSentTokens; $i++) {
+            for ($i = 0; $i < $numberOfSequentialSentTokens; ++$i) {
                 $currentToken = $this->message->getTarget()->getSequentialSentTokens()[$i];
                 $currentResult = $body['results'][$i];
 
@@ -138,6 +138,9 @@ class ResponseProcessor
             ->setCanonicalTokenMessageResults($canonicalTokenMessageResults);
     }
 
+    /**
+     * @param array $body
+     */
     private function processHttpOkResponseWithError(array $body)
     {
         // @todo finish it
@@ -159,6 +162,7 @@ class ResponseProcessor
             if ($response->getBody()->getSize() > 0) {
                 $body = $response->getBody()->getContents();
             }
+
             return \json_decode($body, true);
         }
 

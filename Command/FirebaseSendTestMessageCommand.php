@@ -101,6 +101,9 @@ HELP
         $this->io->success('Done');
     }
 
+    /**
+     * @param MulticastMessageResponseInterface $response
+     */
     private function showResponseDetails(MulticastMessageResponseInterface $response): void
     {
         if ($response->hasSuccessfulMessageResults()) {

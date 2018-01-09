@@ -19,6 +19,9 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload;
  */
 interface PayloadBuilderInterface
 {
+    /**
+     * @return $this
+     */
     public function build();
 
     /**
