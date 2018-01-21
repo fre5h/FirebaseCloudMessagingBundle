@@ -40,6 +40,7 @@ final class HttpClient extends GuzzleClient
                 'Authorization' => \sprintf('key=%s', $serverKey),
                 'Content-Type' => 'application/json',
             ],
+            'version' => 2.0,
         ];
 
         parent::__construct($options);
