@@ -52,7 +52,7 @@ class MessageBuilder
     /**
      * @param AbstractMessage $message
      */
-    public function setMessage(AbstractMessage $message)
+    public function setMessage(AbstractMessage $message): void
     {
         $this->message = $message;
     }
@@ -80,7 +80,7 @@ class MessageBuilder
      */
     public function getMessageAsJson(): string
     {
-        return \json_encode($this->getMessagePartsAsArray(), true);
+        return \json_encode($this->getMessagePartsAsArray());
     }
 
     /**
@@ -137,13 +137,13 @@ class MessageBuilder
             $this->optionsPart = [];
 
             if (!empty($options->getCollapseKey())) {
-                $this->optionsPart['collapse_key'] = (string) $options->getCollapseKey();
+                $this->optionsPart['collapse_key'] = $options->getCollapseKey();
             }
 
             // By default, messages are sent with normal priority.
             // If priority is different add it to the set of options.
             if (Priority::NORMAL !== $options->getPriority()) {
-                $this->optionsPart['priority'] = (string) $options->getPriority();
+                $this->optionsPart['priority'] = $options->getPriority();
             }
 
             // By default `content_available` option is false. Adding it only if it was changed to true.
@@ -159,7 +159,7 @@ class MessageBuilder
             }
 
             if (!empty($options->getRestrictedPackageName())) {
-                $this->optionsPart['restricted_package_name'] = (string) $options->getRestrictedPackageName();
+                $this->optionsPart['restricted_package_name'] = $options->getRestrictedPackageName();
             }
 
             // By default `dry_run` option is.... @todo
@@ -193,7 +193,7 @@ class MessageBuilder
     /**
      * @param AbstractCommonNotificationPayload $payload
      *
-     * @throws \Exception
+     * @throws \InvalidArgumentException
      *
      * @return array
      */
@@ -206,7 +206,7 @@ class MessageBuilder
         } elseif ($payload instanceof WebNotificationPayload) {
             $payloadBuilder = new WebPayloadBuilder($payload);
         } else {
-            throw new \Exception('Unsupported payload part');
+            throw new \InvalidArgumentException('Unsupported payload part');
         }
 
         return $payloadBuilder->build()->getPayloadPart();
