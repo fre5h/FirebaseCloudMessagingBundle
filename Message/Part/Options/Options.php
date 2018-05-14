@@ -110,6 +110,8 @@ final class Options implements OptionsInterface
 
     /**
      * @param bool $mutableContent
+     *
+     * @return $this
      */
     public function setMutableContent(bool $mutableContent): self
     {
