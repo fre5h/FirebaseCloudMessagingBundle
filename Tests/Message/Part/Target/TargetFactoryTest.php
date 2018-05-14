@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Target;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\ConditionTarget;
@@ -23,17 +25,17 @@ use PHPUnit\Framework\TestCase;
  */
 class TargetFactoryTest extends TestCase
 {
-    public function testMethodCreateConditionTarget()
+    public function testMethodCreateConditionTarget(): void
     {
         $this->assertInstanceOf(ConditionTarget::class, TargetFactory::createConditionTarget());
     }
 
-    public function testMethodCreateMulticastTarget()
+    public function testMethodCreateMulticastTarget(): void
     {
         $this->assertInstanceOf(MulticastTarget::class, TargetFactory::createMulticastTarget());
     }
 
-    public function testMethodCreateRecipientTarget()
+    public function testMethodCreateRecipientTarget(): void
     {
         $this->assertInstanceOf(SingleRecipientTarget::class, TargetFactory::createSingleRecipientTarget());
     }

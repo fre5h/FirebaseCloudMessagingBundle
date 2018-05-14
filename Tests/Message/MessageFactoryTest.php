@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\MessageFactory;
@@ -23,17 +25,17 @@ use PHPUnit\Framework\TestCase;
  */
 class MessageFactoryTest extends TestCase
 {
-    public function testMethodCreateAndroidMessage()
+    public function testMethodCreateAndroidMessage(): void
     {
         $this->assertInstanceOf(AndroidMessage::class, MessageFactory::createAndroidMessage());
     }
 
-    public function testMethodCreateIosMessage()
+    public function testMethodCreateIosMessage(): void
     {
         $this->assertInstanceOf(IosMessage::class, MessageFactory::createIosMessage());
     }
 
-    public function testMethodCreateWebMessage()
+    public function testMethodCreateWebMessage(): void
     {
         $this->assertInstanceOf(WebMessage::class, MessageFactory::createWebMessage());
     }

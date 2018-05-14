@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Builder\Payload;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload\AbstractPayloadBuilder;
@@ -23,7 +25,7 @@ use PHPUnit\Framework\TestCase;
  */
 class IosPayloadBuilderTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $iosNotificationPayload = new IosNotificationPayload();
         $builder = new IosPayloadBuilder($iosNotificationPayload);
@@ -31,14 +33,14 @@ class IosPayloadBuilderTest extends TestCase
         $this->assertInstanceOf(PayloadBuilderInterface::class, $builder);
     }
 
-    public function testGetEmptyPayloadPartWithoutCallingBuildMethod()
+    public function testGetEmptyPayloadPartWithoutCallingBuildMethod(): void
     {
         $iosNotificationPayload = new IosNotificationPayload();
         $builder = new IosPayloadBuilder($iosNotificationPayload);
         $this->assertSame([], $builder->getPayloadPart());
     }
 
-    public function testGetEmptyPayloadPartWithCallingBuildMethod()
+    public function testGetEmptyPayloadPartWithCallingBuildMethod(): void
     {
         $iosNotificationPayload = new IosNotificationPayload();
         $builder = new IosPayloadBuilder($iosNotificationPayload);
@@ -46,7 +48,7 @@ class IosPayloadBuilderTest extends TestCase
         $this->assertSame([], $builder->getPayloadPart());
     }
 
-    public function testGetPayloadPartWithAllFields()
+    public function testGetPayloadPartWithAllFields(): void
     {
         $iosNotificationPayload = (new IosNotificationPayload())
             ->setTitle('hello world')
@@ -75,7 +77,7 @@ class IosPayloadBuilderTest extends TestCase
         $this->assertEquals($expected, $builder->getPayloadPart());
     }
 
-    public function testGetPayloadPartWithSomeFields()
+    public function testGetPayloadPartWithSomeFields(): void
     {
         $iosNotificationPayload = (new IosNotificationPayload())
             ->setTitle('hello world')

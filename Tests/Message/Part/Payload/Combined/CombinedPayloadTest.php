@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Payload\Combined;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\AndroidPayloadInterface;
@@ -25,7 +27,7 @@ use PHPUnit\Framework\TestCase;
  */
 class CombinedPayloadTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $combinedPayload = new CombinedPayload();
         $this->assertInstanceOf(AndroidPayloadInterface::class, $combinedPayload);
@@ -33,14 +35,14 @@ class CombinedPayloadTest extends TestCase
         $this->assertInstanceOf(WebPayloadInterface::class, $combinedPayload);
     }
 
-    public function setGetDataPayload()
+    public function setGetDataPayload(): void
     {
         $dataPayload = new DataPayload();
         $combinedPayload = (new CombinedPayload())->setDataPayload($dataPayload);
         $this->assertSame($dataPayload, $combinedPayload->getDataPayload());
     }
 
-    public function setGetNotificationPayload()
+    public function setGetNotificationPayload(): void
     {
         $notificationPayload = new AndroidNotificationPayload();
         $combinedPayload = (new CombinedPayload())->setNotificationPayload($notificationPayload);

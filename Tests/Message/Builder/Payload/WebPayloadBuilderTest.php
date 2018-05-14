@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Builder\Payload;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload\AbstractPayloadBuilder;
@@ -23,7 +25,7 @@ use PHPUnit\Framework\TestCase;
  */
 class WebPayloadBuilderTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $webNotificationPayload = new WebNotificationPayload();
         $builder = new WebPayloadBuilder($webNotificationPayload);
@@ -31,14 +33,14 @@ class WebPayloadBuilderTest extends TestCase
         $this->assertInstanceOf(PayloadBuilderInterface::class, $builder);
     }
 
-    public function testGetEmptyPayloadPartWithoutCallingBuildMethod()
+    public function testGetEmptyPayloadPartWithoutCallingBuildMethod(): void
     {
         $webNotificationPayload = new WebNotificationPayload();
         $builder = new WebPayloadBuilder($webNotificationPayload);
         $this->assertSame([], $builder->getPayloadPart());
     }
 
-    public function testGetEmptyPayloadPartWithCallingBuildMethod()
+    public function testGetEmptyPayloadPartWithCallingBuildMethod(): void
     {
         $webNotificationPayload = new WebNotificationPayload();
         $builder = new WebPayloadBuilder($webNotificationPayload);
@@ -46,7 +48,7 @@ class WebPayloadBuilderTest extends TestCase
         $this->assertSame([], $builder->getPayloadPart());
     }
 
-    public function testGetPayloadPartWithAllFields()
+    public function testGetPayloadPartWithAllFields(): void
     {
         $webNotificationPayload = (new WebNotificationPayload())
             ->setTitle('hello world')
@@ -65,7 +67,7 @@ class WebPayloadBuilderTest extends TestCase
         $this->assertEquals($expected, $builder->getPayloadPart());
     }
 
-    public function testGetPayloadPartWithSomeFields()
+    public function testGetPayloadPartWithSomeFields(): void
     {
         $webNotificationPayload = (new WebNotificationPayload())
             ->setTitle('hello world')

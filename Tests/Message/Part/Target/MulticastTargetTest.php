@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Target;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\MulticastTarget;
@@ -21,14 +23,14 @@ use PHPUnit\Framework\TestCase;
  */
 class MulticastTargetTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $multicastTarget = new MulticastTarget();
         $this->assertInstanceOf(TargetInterface::class, $multicastTarget);
         $this->assertEmpty($multicastTarget->getRegistrationTokens());
     }
 
-    public function testAddRegistrationToken()
+    public function testAddRegistrationToken(): void
     {
         $multicastTarget = (new MulticastTarget())
             ->addRegistrationToken('token_1')
@@ -43,13 +45,13 @@ class MulticastTargetTest extends TestCase
     /**
      * @dataProvider dataProviderForTestSetGetRegistrationTokens
      */
-    public function testSetGetRegistrationTokens($inputTokens, $expectedTokensFromOutput)
+    public function testSetGetRegistrationTokens($inputTokens, $expectedTokensFromOutput): void
     {
         $multicastTarget = (new MulticastTarget())->setRegistrationTokens($inputTokens);
         $this->assertSame($expectedTokensFromOutput, $multicastTarget->getRegistrationTokens());
     }
 
-    public function dataProviderForTestSetGetRegistrationTokens()
+    public function dataProviderForTestSetGetRegistrationTokens(): array
     {
         return [
             [

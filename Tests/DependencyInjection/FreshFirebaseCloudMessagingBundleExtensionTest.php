@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\DependencyInjection;
 
 use Fresh\FirebaseCloudMessagingBundle\DependencyInjection\FreshFirebaseCloudMessagingExtension;
@@ -38,12 +40,12 @@ class FreshFirebaseCloudMessagingBundleExtensionTest extends TestCase
         $this->container->registerExtension($this->extension);
     }
 
-    public function testGetAlias()
+    public function testGetAlias(): void
     {
         $this->assertSame('fresh_firebase_cloud_messaging', $this->extension->getAlias());
     }
 
-    public function testLoadExtension()
+    public function testLoadExtension(): void
     {
         $yaml = <<<'YAML'
 fresh_firebase_cloud_messaging:

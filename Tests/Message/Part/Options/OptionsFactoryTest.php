@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Options;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Options;
@@ -21,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  */
 class OptionsFactoryTest extends TestCase
 {
-    public function testMethodCreateOptions()
+    public function testMethodCreateOptions(): void
     {
         $this->assertInstanceOf(Options::class, OptionsFactory::createOptions());
     }

@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Target;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\ConditionTarget;
@@ -21,13 +23,13 @@ use PHPUnit\Framework\TestCase;
  */
 class ConditionTargetTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $conditionTarget = new ConditionTarget();
         $this->assertInstanceOf(TargetInterface::class, $conditionTarget);
     }
 
-    public function testSetGetCondition()
+    public function testSetGetCondition(): void
     {
         $condition = "'dogs' in topics || 'cats' in topics";
         $conditionTarget = (new ConditionTarget())->setCondition($condition);

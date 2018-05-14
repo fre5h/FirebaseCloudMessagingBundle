@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Target;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\SingleRecipientTarget;
@@ -21,14 +23,14 @@ use PHPUnit\Framework\TestCase;
  */
 class SingleRecipientTargetTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $singleRecipientTarget = new SingleRecipientTarget();
         $this->assertInstanceOf(TargetInterface::class, $singleRecipientTarget);
         $this->assertEmpty($singleRecipientTarget->getRegistrationToken());
     }
 
-    public function testSetGetCondition()
+    public function testSetGetCondition(): void
     {
         $token = 'token';
         $singleRecipientTarget = (new SingleRecipientTarget())->setRegistrationToken($token);

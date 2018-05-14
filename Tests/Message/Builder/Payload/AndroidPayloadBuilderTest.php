@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Builder\Payload;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload\AbstractPayloadBuilder;
@@ -23,7 +25,7 @@ use PHPUnit\Framework\TestCase;
  */
 class AndroidPayloadBuilderTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $androidNotificationPayload = new AndroidNotificationPayload();
         $builder = new AndroidPayloadBuilder($androidNotificationPayload);
@@ -31,14 +33,14 @@ class AndroidPayloadBuilderTest extends TestCase
         $this->assertInstanceOf(PayloadBuilderInterface::class, $builder);
     }
 
-    public function testGetEmptyPayloadPartWithoutCallingBuildMethod()
+    public function testGetEmptyPayloadPartWithoutCallingBuildMethod(): void
     {
         $androidNotificationPayload = new AndroidNotificationPayload();
         $builder = new AndroidPayloadBuilder($androidNotificationPayload);
         $this->assertSame([], $builder->getPayloadPart());
     }
 
-    public function testGetEmptyPayloadPartWithCallingBuildMethod()
+    public function testGetEmptyPayloadPartWithCallingBuildMethod(): void
     {
         $androidNotificationPayload = new AndroidNotificationPayload();
         $builder = new AndroidPayloadBuilder($androidNotificationPayload);
@@ -46,7 +48,7 @@ class AndroidPayloadBuilderTest extends TestCase
         $this->assertSame([], $builder->getPayloadPart());
     }
 
-    public function testGetPayloadPartWithAllFields()
+    public function testGetPayloadPartWithAllFields(): void
     {
         $androidNotificationPayload = (new AndroidNotificationPayload())
             ->setTitle('hello world')
@@ -79,7 +81,7 @@ class AndroidPayloadBuilderTest extends TestCase
         $this->assertEquals($expected, $builder->getPayloadPart());
     }
 
-    public function testGetPayloadPartWithSomeFields()
+    public function testGetPayloadPartWithSomeFields(): void
     {
         $androidNotificationPayload = (new AndroidNotificationPayload())
             ->setTitle('hello world')

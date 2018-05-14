@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Payload\Notification;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\IosPayloadInterface;
@@ -21,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  */
 class IosNotificationPayloadTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $iosNotificationPayload = new IosNotificationPayload();
         $this->assertInstanceOf(IosPayloadInterface::class, $iosNotificationPayload);
@@ -36,63 +38,63 @@ class IosNotificationPayloadTest extends TestCase
         $this->assertEmpty($iosNotificationPayload->getTitleLocKey());
     }
 
-    public function setGetBadge()
+    public function setGetBadge(): void
     {
         $badge = '1';
         $iosNotificationPayload = (new IosNotificationPayload())->setBadge($badge);
         $this->assertSame($badge, $iosNotificationPayload->getBadge());
     }
 
-    public function setGetBody()
+    public function setGetBody(): void
     {
         $body = 'test';
         $iosNotificationPayload = (new IosNotificationPayload())->setBody($body);
         $this->assertSame($body, $iosNotificationPayload->getBody());
     }
 
-    public function setGetBodyLocArgs()
+    public function setGetBodyLocArgs(): void
     {
         $bodyLocArgs = ['test'];
         $iosNotificationPayload = (new IosNotificationPayload())->setBodyLocArgs($bodyLocArgs);
         $this->assertSame($bodyLocArgs, $iosNotificationPayload->getBodyLocArgs());
     }
 
-    public function setGetBodyLocKey()
+    public function setGetBodyLocKey(): void
     {
         $bodyLocKey = 'test';
         $iosNotificationPayload = (new IosNotificationPayload())->setBodyLocKey($bodyLocKey);
         $this->assertSame($bodyLocKey, $iosNotificationPayload->getBodyLocKey());
     }
 
-    public function setGetClickAction()
+    public function setGetClickAction(): void
     {
         $clickAction = 'test';
         $iosNotificationPayload = (new IosNotificationPayload())->setClickAction($clickAction);
         $this->assertSame($clickAction, $iosNotificationPayload->getClickAction());
     }
 
-    public function setGetSound()
+    public function setGetSound(): void
     {
         $sound = 'test';
         $iosNotificationPayload = (new IosNotificationPayload())->setSound($sound);
         $this->assertSame($sound, $iosNotificationPayload->getSound());
     }
 
-    public function setGetTitle()
+    public function setGetTitle(): void
     {
         $title = 'test';
         $iosNotificationPayload = (new IosNotificationPayload())->setTitle($title);
         $this->assertSame($title, $iosNotificationPayload->getTitle());
     }
 
-    public function setGetTitleLocArgs()
+    public function setGetTitleLocArgs(): void
     {
         $titleLocArgs = ['test'];
         $iosNotificationPayload = (new IosNotificationPayload())->setTitleLocArgs($titleLocArgs);
         $this->assertSame($titleLocArgs, $iosNotificationPayload->getTitleLocArgs());
     }
 
-    public function setGetTitleLocKey()
+    public function setGetTitleLocKey(): void
     {
         $titleLocKey = 'test';
         $iosNotificationPayload = (new IosNotificationPayload())->setTitleLocKey($titleLocKey);

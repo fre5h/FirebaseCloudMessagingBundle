@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Payload\Data;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\AndroidPayloadInterface;
@@ -23,7 +25,7 @@ use PHPUnit\Framework\TestCase;
  */
 class DataPayloadTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $dataPayload = new DataPayload();
         $this->assertInstanceOf(AndroidPayloadInterface::class, $dataPayload);
@@ -32,7 +34,7 @@ class DataPayloadTest extends TestCase
         $this->assertEmpty($dataPayload->getData());
     }
 
-    public function setGetDataPayload()
+    public function setGetDataPayload(): void
     {
         $data = ['test' => 'data'];
         $dataPayload = (new DataPayload())->setData($data);

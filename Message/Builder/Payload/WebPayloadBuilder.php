@@ -37,11 +37,11 @@ class WebPayloadBuilder extends AbstractPayloadBuilder
         $this->payloadPart = [];
 
         if (!empty($this->payload->getTitle())) {
-            $this->payloadPart['title'] = (string) $this->payload->getTitle();
+            $this->payloadPart['title'] = $this->payload->getTitle();
         }
 
         if (!empty($this->payload->getBody())) {
-            $this->payloadPart['body'] = (string) $this->payload->getBody();
+            $this->payloadPart['body'] = $this->payload->getBody();
         }
 
         if (!empty($this->payload->getIcon())) {
@@ -49,7 +49,7 @@ class WebPayloadBuilder extends AbstractPayloadBuilder
         }
 
         if (!empty($this->payload->getClickAction())) {
-            $this->payloadPart['click_action'] = (string) $this->payload->getClickAction();
+            $this->payloadPart['click_action'] = $this->payload->getClickAction();
         }
 
         return $this;

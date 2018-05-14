@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Type;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Options;
@@ -24,27 +26,27 @@ use PHPUnit\Framework\TestCase;
  */
 class WebMessageTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $webMessage = new WebMessage();
         $this->assertInstanceOf(AbstractMessage::class, $webMessage);
     }
 
-    public function testSetGetTarget()
+    public function testSetGetTarget(): void
     {
         $target = new MulticastTarget();
         $webMessage = (new WebMessage())->setTarget($target);
         $this->assertSame($target, $webMessage->getTarget());
     }
 
-    public function testSetGetOptions()
+    public function testSetGetOptions(): void
     {
         $options = new Options();
         $webMessage = (new WebMessage())->setOptions($options);
         $this->assertSame($options, $webMessage->getOptions());
     }
 
-    public function testSetGetPayload()
+    public function testSetGetPayload(): void
     {
         $payload = new WebNotificationPayload();
         $webMessage = (new WebMessage())->setPayload($payload);

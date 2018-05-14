@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Event;
 
 use Fresh\FirebaseCloudMessagingBundle\Event\TopicMessageResponseEvent;
@@ -20,7 +22,7 @@ use PHPUnit\Framework\TestCase;
  */
 class TopicMessageResponseEventTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $messageId = 123;
         $error = 'Missing Registration Token';

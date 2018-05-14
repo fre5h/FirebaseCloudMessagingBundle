@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\DependencyInjection;
 
 use Fresh\FirebaseCloudMessagingBundle\DependencyInjection\Configuration;
@@ -23,7 +25,7 @@ class ConfigurationTest extends TestCase
 {
     use ConfigurationTestCaseTrait;
 
-    public function testInvalidConfiguration()
+    public function testInvalidConfiguration(): void
     {
         $this->assertConfigurationIsInvalid(
             [
@@ -35,7 +37,7 @@ class ConfigurationTest extends TestCase
         );
     }
 
-    public function testValidDefaultConfiguration()
+    public function testValidDefaultConfiguration(): void
     {
         $this->assertProcessedConfigurationEquals(
             [],
@@ -46,7 +48,7 @@ class ConfigurationTest extends TestCase
         );
     }
 
-    public function testValidConfiguration()
+    public function testValidConfiguration(): void
     {
         $this->assertProcessedConfigurationEquals(
             [

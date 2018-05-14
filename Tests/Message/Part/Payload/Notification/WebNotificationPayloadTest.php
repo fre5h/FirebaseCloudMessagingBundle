@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Payload\Notification;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Notification\WebNotificationPayload;
@@ -21,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  */
 class WebNotificationPayloadTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $webNotificationPayload = new WebNotificationPayload();
         $this->assertInstanceOf(WebPayloadInterface::class, $webNotificationPayload);
@@ -31,28 +33,28 @@ class WebNotificationPayloadTest extends TestCase
         $this->assertEmpty($webNotificationPayload->getTitle());
     }
 
-    public function setGetBody()
+    public function setGetBody(): void
     {
         $body = 'test';
         $webNotificationPayload = (new WebNotificationPayload())->setBody($body);
         $this->assertSame($body, $webNotificationPayload->getBody());
     }
 
-    public function setGetClickAction()
+    public function setGetClickAction(): void
     {
         $clickAction = 'test';
         $webNotificationPayload = (new WebNotificationPayload())->setClickAction($clickAction);
         $this->assertSame($clickAction, $webNotificationPayload->getClickAction());
     }
 
-    public function setGetIcon()
+    public function setGetIcon(): void
     {
         $icon = 'test';
         $webNotificationPayload = (new WebNotificationPayload())->setIcon($icon);
         $this->assertSame($icon, $webNotificationPayload->getIcon());
     }
 
-    public function setGetTitle()
+    public function setGetTitle(): void
     {
         $title = 'test';
         $webNotificationPayload = (new WebNotificationPayload())->setTitle($title);

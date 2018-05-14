@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Event;
 
 use Fresh\FirebaseCloudMessagingBundle\Event\MulticastMessageResponseEvent;
@@ -23,7 +25,7 @@ use PHPUnit\Framework\TestCase;
  */
 class MulticastMessageResponseEventTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $multicastId = 123;
         $success = new SuccessfulMessageResultCollection();

@@ -25,7 +25,7 @@ class Configuration implements ConfigurationInterface
     /**
      * {@inheritdoc}
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('fresh_firebase_cloud_messaging');
@@ -36,7 +36,8 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('server_key')->end()
                 ->scalarNode('endpoint')->defaultValue('https://fcm.googleapis.com/fcm/send')->end()
                 ->scalarNode('guzzle_timeout')->defaultValue(50)->end()
-            ->end();
+            ->end()
+        ;
 
         return $treeBuilder;
     }

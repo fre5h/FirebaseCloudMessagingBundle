@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Part\Payload\Notification;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\AndroidPayloadInterface;
@@ -21,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  */
 class AndroidNotificationPayloadTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $androidNotificationPayload = new AndroidNotificationPayload();
         $this->assertInstanceOf(AndroidPayloadInterface::class, $androidNotificationPayload);
@@ -38,77 +40,77 @@ class AndroidNotificationPayloadTest extends TestCase
         $this->assertEmpty($androidNotificationPayload->getTitleLocKey());
     }
 
-    public function setGetBody()
+    public function setGetBody(): void
     {
         $body = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setBody($body);
         $this->assertSame($body, $androidNotificationPayload->getBody());
     }
 
-    public function setGetBodyLocArgs()
+    public function setGetBodyLocArgs(): void
     {
         $bodyLocArgs = ['test'];
         $androidNotificationPayload = (new AndroidNotificationPayload())->setBodyLocArgs($bodyLocArgs);
         $this->assertSame($bodyLocArgs, $androidNotificationPayload->getBodyLocArgs());
     }
 
-    public function setGetBodyLocKey()
+    public function setGetBodyLocKey(): void
     {
         $bodyLocKey = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setBodyLocKey($bodyLocKey);
         $this->assertSame($bodyLocKey, $androidNotificationPayload->getBodyLocKey());
     }
 
-    public function setGetClickAction()
+    public function setGetClickAction(): void
     {
         $clickAction = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setClickAction($clickAction);
         $this->assertSame($clickAction, $androidNotificationPayload->getClickAction());
     }
 
-    public function setGetColor()
+    public function setGetColor(): void
     {
         $color = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setColor($color);
         $this->assertSame($color, $androidNotificationPayload->getColor());
     }
 
-    public function setGetIcon()
+    public function setGetIcon(): void
     {
         $icon = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setIcon($icon);
         $this->assertSame($icon, $androidNotificationPayload->getIcon());
     }
 
-    public function setGetSound()
+    public function setGetSound(): void
     {
         $sound = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setSound($sound);
         $this->assertSame($sound, $androidNotificationPayload->getSound());
     }
 
-    public function setGetTag()
+    public function setGetTag(): void
     {
         $tag = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setTag($tag);
         $this->assertSame($tag, $androidNotificationPayload->getTag());
     }
 
-    public function setGetTitle()
+    public function setGetTitle(): void
     {
         $title = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setTitle($title);
         $this->assertSame($title, $androidNotificationPayload->getTitle());
     }
 
-    public function setGetTitleLocArgs()
+    public function setGetTitleLocArgs(): void
     {
         $titleLocArgs = ['test'];
         $androidNotificationPayload = (new AndroidNotificationPayload())->setTitleLocArgs($titleLocArgs);
         $this->assertSame($titleLocArgs, $androidNotificationPayload->getTitleLocArgs());
     }
 
-    public function setGetTitleLocKey()
+    public function setGetTitleLocKey(): void
     {
         $titleLocKey = 'test';
         $androidNotificationPayload = (new AndroidNotificationPayload())->setTitleLocKey($titleLocKey);

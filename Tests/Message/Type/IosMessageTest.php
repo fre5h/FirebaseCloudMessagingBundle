@@ -8,6 +8,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Fresh\FirebaseCloudMessagingBundle\Tests\Message\Type;
 
 use Fresh\FirebaseCloudMessagingBundle\Message\Part\Options\Options;
@@ -24,27 +26,27 @@ use PHPUnit\Framework\TestCase;
  */
 class IosMessageTest extends TestCase
 {
-    public function testObjectCreation()
+    public function testObjectCreation(): void
     {
         $iosMessage = new IosMessage();
         $this->assertInstanceOf(AbstractMessage::class, $iosMessage);
     }
 
-    public function testSetGetTarget()
+    public function testSetGetTarget(): void
     {
         $target = new MulticastTarget();
         $iosMessage = (new IosMessage())->setTarget($target);
         $this->assertSame($target, $iosMessage->getTarget());
     }
 
-    public function testSetGetOptions()
+    public function testSetGetOptions(): void
     {
         $options = new Options();
         $iosMessage = (new IosMessage())->setOptions($options);
         $this->assertSame($options, $iosMessage->getOptions());
     }
 
-    public function testSetGetPayload()
+    public function testSetGetPayload(): void
     {
         $payload = new IosNotificationPayload();
         $iosMessage = (new IosMessage())->setPayload($payload);

@@ -49,7 +49,7 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
     /**
      * {@inheritdoc}
      */
-    public function valid()
+    public function valid(): bool
     {
         $key = \key($this->messageResults);
 
@@ -59,7 +59,7 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
     /**
      * {@inheritdoc}
      */
-    public function rewind()
+    public function rewind(): void
     {
         \reset($this->messageResults);
     }
@@ -75,7 +75,7 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
     /**
      * {@inheritdoc}
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->messageResults[$offset]);
     }
@@ -85,13 +85,13 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
      */
     public function offsetGet($offset)
     {
-        return isset($this->messageResults[$offset]) ? $this->messageResults[$offset] : null;
+        return $this->messageResults[$offset] ?? null;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->messageResults[$offset]);
     }
@@ -99,7 +99,7 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
     /**
      * {@inheritdoc}
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $supportedMessageResult = $this->getSupportedMessageResultType();
         if (!$value instanceof $supportedMessageResult) {
@@ -113,7 +113,7 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
             );
         }
 
-        if (\is_null($offset)) {
+        if (null === $offset) {
             $this->messageResults[] = $value;
         } else {
             $this->messageResults[$offset] = $value;
