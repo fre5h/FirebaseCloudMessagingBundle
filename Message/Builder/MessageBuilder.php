@@ -151,6 +151,11 @@ class MessageBuilder
                 $this->optionsPart['content_available'] = true;
             }
 
+            // By default `mutable_content` option is false. Adding it only if it was changed to true.
+            if ($options->isMutableContent()) {
+                $this->optionsPart['mutable_content'] = true;
+            }
+
             // By default TTL for message in FCM is 4 weeks, it is also the default value if you omitted the TTL option.
             // So if the TTL is overwritten and is not equal to the default value, then add this option.
             // Otherwise if TTL is still equal to default, then it is not need to send this option.

@@ -35,6 +35,11 @@ interface OptionsInterface
     public function isContentAvailable(): bool;
 
     /**
+     * @return bool
+     */
+    public function isMutableContent(): bool;
+
+    /**
      * @return int
      */
     public function getTimeToLive(): int;

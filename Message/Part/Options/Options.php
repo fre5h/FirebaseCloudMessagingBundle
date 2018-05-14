@@ -36,8 +36,11 @@ final class Options implements OptionsInterface
     /** @var bool */
     private $contentAvailable = false;
 
+    /** @var bool */
+    private $mutableContent = false;
+
     /** @var int */
-    private $ttl = self::DEFAULT_TTL_IN_SECONDS;
+    private $timeToLive = self::DEFAULT_TTL_IN_SECONDS;
 
     /** @var string */
     private $restrictedPackageName = '';
@@ -106,13 +109,31 @@ final class Options implements OptionsInterface
     }
 
     /**
+     * @param bool $mutableContent
+     */
+    public function setMutableContent(bool $mutableContent): self
+    {
+        $this->mutableContent = $mutableContent;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isMutableContent(): bool
+    {
+        return $this->mutableContent;
+    }
+
+    /**
      * @param int $timeToLive
      *
      * @return $this
      */
     public function setTimeToLive(int $timeToLive): self
     {
-        $this->ttl = $timeToLive;
+        $this->timeToLive = $timeToLive;
 
         return $this;
     }
@@ -122,7 +143,7 @@ final class Options implements OptionsInterface
      */
     public function getTimeToLive(): int
     {
-        return $this->ttl;
+        return $this->timeToLive;
     }
 
     /**
