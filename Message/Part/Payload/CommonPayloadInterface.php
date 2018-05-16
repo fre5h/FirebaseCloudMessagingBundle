@@ -13,7 +13,7 @@ declare(strict_types=1);
 namespace Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload;
 
 /**
- * PayloadInterface.
+ * CommonPayloadInterface.
  *
  * @author Artem Henvald <genvaldartem@gmail.com>
  */
