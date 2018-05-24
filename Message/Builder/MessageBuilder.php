@@ -40,13 +40,8 @@ class MessageBuilder
     /** @var AbstractMessage */
     private $message;
 
-    /** @var array */
     private $targetPart = [];
-
-    /** @var array */
     private $optionsPart = [];
-
-    /** @var array */
     private $payloadPart = [];
 
     /**
@@ -58,9 +53,9 @@ class MessageBuilder
     }
 
     /**
-     * @throws \Exception
-     *
      * @return array
+     *
+     * @throws \RuntimeException
      */
     public function getMessagePartsAsArray(): array
     {
@@ -88,9 +83,9 @@ class MessageBuilder
      *
      * Target and payload are required parts. Options can be omitted.
      *
-     * @throws \RuntimeException
-     *
      * @return bool
+     *
+     * @throws \RuntimeException
      */
     private function messageIsValid(): bool
     {
@@ -110,10 +105,14 @@ class MessageBuilder
     }
 
     /**
-     * Build target part.
+     * @return void
+     *
+     * @throws \InvalidArgumentException
      */
     private function buildTargetPart(): void
     {
+        $this->targetPart = [];
+
         $target = $this->message->getTarget();
 
         if ($target instanceof Target\ConditionTarget) {
@@ -128,13 +127,14 @@ class MessageBuilder
     }
 
     /**
-     * Build options part.
+     * @return void
      */
     private function buildOptionsPart(): void
     {
+        $this->optionsPart = [];
+
         if ($this->message instanceof AbstractMessage && $this->message->getOptions() instanceof OptionsInterface) {
             $options = $this->message->getOptions();
-            $this->optionsPart = [];
 
             if (!empty($options->getCollapseKey())) {
                 $this->optionsPart['collapse_key'] = $options->getCollapseKey();
@@ -175,10 +175,14 @@ class MessageBuilder
     }
 
     /**
-     * Build payload part.
+     * @return void
+     *
+     * @throws \InvalidArgumentException
      */
     private function buildPayloadPart(): void
     {
+        $this->payloadPart = [];
+
         $payload = $this->message->getPayload();
 
         if ($payload instanceof AbstractCommonNotificationPayload) {
@@ -198,9 +202,9 @@ class MessageBuilder
     /**
      * @param AbstractCommonNotificationPayload $payload
      *
-     * @throws \InvalidArgumentException
-     *
      * @return array
+     *
+     * @throws \InvalidArgumentException
      */
     private function buildNotificationPayloadPart(AbstractCommonNotificationPayload $payload): array
     {
@@ -211,7 +215,7 @@ class MessageBuilder
         } elseif ($payload instanceof WebNotificationPayload) {
             $payloadBuilder = new WebPayloadBuilder($payload);
         } else {
-            throw new \InvalidArgumentException('Unsupported payload part');
+            throw new \InvalidArgumentException('Unsupported notification payload part');
         }
 
         return $payloadBuilder->build()->getPayloadPart();
