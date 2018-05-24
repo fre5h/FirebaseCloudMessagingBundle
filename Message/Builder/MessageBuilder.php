@@ -127,7 +127,7 @@ class MessageBuilder
     }
 
     /**
-     * Build options part
+     * Build options part.
      */
     private function buildOptionsPart(): void
     {
