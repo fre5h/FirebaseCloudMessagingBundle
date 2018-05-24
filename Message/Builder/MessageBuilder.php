@@ -126,6 +126,9 @@ class MessageBuilder
         }
     }
 
+    /**
+     * Build options part
+     */
     private function buildOptionsPart(): void
     {
         $this->optionsPart = [];

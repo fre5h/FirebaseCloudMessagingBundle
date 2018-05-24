@@ -30,7 +30,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 class FirebaseSendTestMessageCommand extends Command
 {
-    /** @var FirebaseClient */
     private $firebaseClient;
 
     /** @var SymfonyStyle */

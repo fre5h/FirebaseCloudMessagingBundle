@@ -9,17 +9,14 @@ services:
             $endpoint: '%firebase_cloud_messaging.endpoint%'
             $guzzleTimeOut: '%firebase_cloud_messaging.guzzle_timeout%'
 
-    Fresh\FirebaseCloudMessagingBundle\Client\FirebaseClient:
-        class: Fresh\FirebaseCloudMessagingBundle\Client\FirebaseClient
+    Fresh\FirebaseCloudMessagingBundle\Client\:
+        resource: '../../Client/'
 
-    Fresh\FirebaseCloudMessagingBundle\Client\HttpClient:
-        class: Fresh\FirebaseCloudMessagingBundle\Client\HttpClient
+    Fresh\FirebaseCloudMessagingBundle\Command\:
+        resource: '../../Command/'
 
     Fresh\FirebaseCloudMessagingBundle\Response\ResponseProcessor:
         class: Fresh\FirebaseCloudMessagingBundle\Response\ResponseProcessor
 
     Fresh\FirebaseCloudMessagingBundle\Message\Builder\MessageBuilder:
         class: Fresh\FirebaseCloudMessagingBundle\Message\Builder\MessageBuilder
-
-    Fresh\FirebaseCloudMessagingBundle\Command\:
-        resource: '../../Command/'
