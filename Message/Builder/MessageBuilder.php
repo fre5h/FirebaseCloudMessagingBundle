@@ -41,7 +41,9 @@ class MessageBuilder
     private $message;
 
     private $targetPart = [];
+
     private $optionsPart = [];
+
     private $payloadPart = [];
 
     /**
@@ -105,8 +107,6 @@ class MessageBuilder
     }
 
     /**
-     * @return void
-     *
      * @throws \InvalidArgumentException
      */
     private function buildTargetPart(): void
@@ -126,9 +126,6 @@ class MessageBuilder
         }
     }
 
-    /**
-     * @return void
-     */
     private function buildOptionsPart(): void
     {
         $this->optionsPart = [];
@@ -175,8 +172,6 @@ class MessageBuilder
     }
 
     /**
-     * @return void
-     *
      * @throws \InvalidArgumentException
      */
     private function buildPayloadPart(): void
