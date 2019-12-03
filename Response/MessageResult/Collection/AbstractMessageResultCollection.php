@@ -109,7 +109,7 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
                 \get_class($value),
                 $supportedMessageResult
             );
-            
+
             throw new \Exception($exceptionMessage);
         }
 
