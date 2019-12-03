@@ -103,14 +103,14 @@ abstract class AbstractMessageResultCollection implements MessageResultCollectio
     {
         $supportedMessageResult = $this->getSupportedMessageResultType();
         if (!$value instanceof $supportedMessageResult) {
-            throw new \Exception(
-                \sprintf(
-                    '%s does not support message result of %s. The only supported class is %s',
-                    static::class,
-                    \get_class($value),
-                    $supportedMessageResult
-                )
+            $exceptionMessage = \sprintf(
+                '%s does not support message result of %s. The only supported class is %s',
+                static::class,
+                \get_class($value),
+                $supportedMessageResult
             );
+            
+            throw new \Exception($exceptionMessage);
         }
 
         if (null === $offset) {
