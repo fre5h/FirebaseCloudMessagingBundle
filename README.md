@@ -1,6 +1,6 @@
 # FirebaseCloudMessagingBundle
 
-Provides integration with Firebase Cloud Messaging API in Symfony applications.
+:package: Provides integration with Firebase Cloud Messaging API in Symfony applications.
 
 > Right now this bundle is in active development phase. Things can change unpredictably!
 
