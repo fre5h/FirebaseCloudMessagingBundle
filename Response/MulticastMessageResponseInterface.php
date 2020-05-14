@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the FirebaseCloudMessagingBundle
+ * This file is part of the FirebaseCloudMessagingBundle.
  *
  * (c) Artem Henvald <genvaldartem@gmail.com>
  *
