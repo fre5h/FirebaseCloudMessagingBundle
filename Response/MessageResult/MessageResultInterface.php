@@ -29,5 +29,5 @@ interface MessageResultInterface
      *
      * @return $this
      */
-    public function setToken(string $token);
+    public function setToken(string $token): self;
 }

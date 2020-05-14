@@ -44,6 +44,9 @@ class MulticastTargetTest extends TestCase
 
     /**
      * @dataProvider dataProviderForTestSetGetRegistrationTokens
+     *
+     * @param $inputTokens
+     * @param $expectedTokensFromOutput
      */
     public function testSetGetRegistrationTokens($inputTokens, $expectedTokensFromOutput): void
     {
@@ -51,17 +54,16 @@ class MulticastTargetTest extends TestCase
         $this->assertSame($expectedTokensFromOutput, $multicastTarget->getRegistrationTokens());
     }
 
-    public function dataProviderForTestSetGetRegistrationTokens(): array
+    public function dataProviderForTestSetGetRegistrationTokens(): iterable
     {
-        return [
-            [
-                ['token_1', 'token_2'],
-                ['token_1', 'token_2'],
-            ],
-            [
-                ['token_1', 'token_2', 'token_1', 'token_2'],
-                ['token_1', 'token_2'],
-            ],
+        yield [
+            ['token_1', 'token_2'],
+            ['token_1', 'token_2'],
+        ];
+
+        yield [
+            ['token_1', 'token_2', 'token_1', 'token_2'],
+            ['token_1', 'token_2'],
         ];
     }
 }

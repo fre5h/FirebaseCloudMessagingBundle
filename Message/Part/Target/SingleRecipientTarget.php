@@ -19,8 +19,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Part\Target;
  */
 class SingleRecipientTarget implements TargetInterface, TokenTargetInterface
 {
-    /** @var string */
-    private $registrationToken = '';
+    private string $registrationToken = '';
 
     /**
      * @param string $registrationToken

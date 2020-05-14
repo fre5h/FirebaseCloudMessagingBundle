@@ -23,14 +23,11 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Target\TargetInterface;
  */
 abstract class AbstractMessage
 {
-    /** @var TargetInterface */
-    protected $target;
+    protected TargetInterface $target;
 
-    /** @var OptionsInterface */
-    protected $options;
+    protected OptionsInterface $options;
 
-    /** @var CommonPayloadInterface */
-    protected $payload;
+    protected CommonPayloadInterface $payload;
 
     /**
      * @param TargetInterface $target

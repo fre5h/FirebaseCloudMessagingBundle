@@ -29,5 +29,5 @@ interface SuccessfulMessageResultInterface extends MessageResultInterface
      *
      * @return $this
      */
-    public function setMessageId(string $messageId);
+    public function setMessageId(string $messageId): self;
 }

@@ -25,11 +25,9 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\WebPayloadInterface;
  */
 class CombinedPayload implements AndroidPayloadInterface, IosPayloadInterface, WebPayloadInterface
 {
-    /** @var DataPayload */
-    private $dataPayload;
+    private DataPayload $dataPayload;
 
-    /** @var AbstractCommonNotificationPayload */
-    private $notificationPayload;
+    private AbstractCommonNotificationPayload $notificationPayload;
 
     /**
      * @param DataPayload $dataPayload

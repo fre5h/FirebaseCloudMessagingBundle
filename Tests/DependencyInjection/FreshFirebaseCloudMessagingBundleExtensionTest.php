@@ -24,16 +24,14 @@ use Symfony\Component\Yaml\Parser;
  */
 class FreshFirebaseCloudMessagingBundleExtensionTest extends TestCase
 {
-    /** @var FreshFirebaseCloudMessagingExtension */
-    private $extension;
+    private FreshFirebaseCloudMessagingExtension $extension;
 
-    /** @var ContainerBuilder */
-    private $container;
+    private ContainerBuilder $container;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->extension = new FreshFirebaseCloudMessagingExtension();
         $this->container = new ContainerBuilder();

@@ -29,5 +29,5 @@ interface FailedMessageResultInterface extends MessageResultInterface
      *
      * @return $this
      */
-    public function setError(string $error);
+    public function setError(string $error): self;
 }

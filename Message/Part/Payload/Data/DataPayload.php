@@ -23,8 +23,7 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\WebPayloadInterface;
  */
 class DataPayload implements AndroidPayloadInterface, IosPayloadInterface, WebPayloadInterface
 {
-    /** @var array */
-    private $data = [];
+    private array $data = [];
 
     /**
      * @param array $data

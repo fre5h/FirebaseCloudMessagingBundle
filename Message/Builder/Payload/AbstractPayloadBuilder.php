@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload;
 
+use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\CommonPayloadInterface;
+
 /**
  * AbstractPayloadBuilder.
  *
@@ -19,7 +21,8 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload;
  */
 abstract class AbstractPayloadBuilder implements PayloadBuilderInterface
 {
-    protected PayloadBuilderInterface $payload;
+    protected CommonPayloadInterface $payload;
+
     protected array $payloadPart = [];
 
     /**

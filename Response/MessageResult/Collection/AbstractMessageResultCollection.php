@@ -19,8 +19,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\Collection;
  */
 abstract class AbstractMessageResultCollection implements MessageResultCollectionInterface
 {
-    /** @var array */
-    protected $messageResults = [];
+    protected array $messageResults = [];
 
     /**
      * {@inheritdoc}

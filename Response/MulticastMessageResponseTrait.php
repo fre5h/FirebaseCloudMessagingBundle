@@ -26,17 +26,13 @@ use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\SuccessfulMessageR
  */
 trait MulticastMessageResponseTrait
 {
-    /** @var int */
-    private $multicastId;
+    private int $multicastId;
 
-    /** @var SuccessfulMessageResultCollection */
-    private $successfulMessageResults;
+    private SuccessfulMessageResultCollection $successfulMessageResults;
 
-    /** @var FailedMessageResultCollection */
-    private $failedMessageResults;
+    private FailedMessageResultCollection $failedMessageResults;
 
-    /** @var CanonicalTokenMessageResultCollection */
-    private $canonicalTokenMessageResults;
+    private CanonicalTokenMessageResultCollection $canonicalTokenMessageResults;
 
     /**
      * @return int

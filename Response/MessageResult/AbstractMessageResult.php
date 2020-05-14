@@ -19,8 +19,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Response\MessageResult;
  */
 abstract class AbstractMessageResult implements MessageResultInterface
 {
-    /** @var string */
-    private $token = '';
+    private string $token = '';
 
     /**
      * {@inheritdoc}

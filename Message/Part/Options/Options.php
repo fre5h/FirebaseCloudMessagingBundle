@@ -27,26 +27,19 @@ final class Options implements OptionsInterface
      */
     public const DEFAULT_TTL_IN_SECONDS = 2419200;
 
-    /** @var string */
-    private $collapseKey = '';
+    private string $collapseKey = '';
 
-    /** @var string */
-    private $priority = Priority::NORMAL;
+    private string $priority = Priority::NORMAL;
 
-    /** @var bool */
-    private $contentAvailable = false;
+    private bool $contentAvailable = false;
 
-    /** @var bool */
-    private $mutableContent = false;
+    private bool $mutableContent = false;
 
-    /** @var int */
-    private $timeToLive = self::DEFAULT_TTL_IN_SECONDS;
+    private int $timeToLive = self::DEFAULT_TTL_IN_SECONDS;
 
-    /** @var string */
-    private $restrictedPackageName = '';
+    private string $restrictedPackageName = '';
 
-    /** @var bool */
-    private $dryRun = false;
+    private bool $dryRun = false;
 
     /**
      * @param string $collapseKey

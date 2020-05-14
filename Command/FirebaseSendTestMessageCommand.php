@@ -31,6 +31,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class FirebaseSendTestMessageCommand extends Command
 {
     private FirebaseClient $firebaseClient;
+
     private SymfonyStyle $io;
 
     /**
@@ -50,7 +51,8 @@ class FirebaseSendTestMessageCommand extends Command
         $this
             ->setName('firebase:send:test-message')
             ->setDescription('Sends test message with the "notification" payload to the specific registration token')
-            ->setHelp(<<<'HELP'
+            ->setHelp(
+                <<<'HELP'
 The <info>%command.name%</info> sends test message with the "notification" payload to the specific registration token.
 
 <info>%command.full_name% registration_token</info>

@@ -35,14 +35,12 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ResponseProcessor
 {
-    /** @var array */
-    private $jsonContentTypes = [
+    private array $jsonContentTypes = [
         'application/json',
         'application/json; charset=UTF-8',
     ];
 
-    /** @var AbstractMessage */
-    private $message;
+    private AbstractMessage $message;
 
     /**
      * @param AbstractMessage   $message
@@ -177,6 +175,6 @@ class ResponseProcessor
     private function responseContentTypeIsJson(ResponseInterface $response): bool
     {
         return $response->hasHeader('Content-Type')
-               && \in_array($response->getHeader('Content-Type')[0], $this->jsonContentTypes);
+               && \in_array($response->getHeader('Content-Type')[0], $this->jsonContentTypes, true);
     }
 }

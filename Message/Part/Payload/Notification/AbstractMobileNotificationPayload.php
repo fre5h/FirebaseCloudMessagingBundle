@@ -19,20 +19,17 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\Notification;
  */
 abstract class AbstractMobileNotificationPayload extends AbstractCommonNotificationPayload
 {
-    /** @var string|null */
-    private $sound;
+    private ?string $sound = null;
 
-    /** @var string|null */
-    private $bodyLocKey;
+    private ?string $bodyLocKey = null;
 
     /** @var string[]|null */
-    private $bodyLocArgs;
+    private ?array $bodyLocArgs = null;
 
-    /** @var string|null */
-    private $titleLocKey;
+    private ?string $titleLocKey = null;
 
     /** @var string[]|null */
-    private $titleLocArgs;
+    private ?array $titleLocArgs = null;
 
     /**
      * @param string $sound

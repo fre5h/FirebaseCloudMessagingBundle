@@ -19,8 +19,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Response\MessageResult;
  */
 class CanonicalTokenMessageResult extends AbstractSuccessfulMessageResult implements CanonicalTokenMessageResultInterface
 {
-    /** @var string */
-    private $canonicalToken = '';
+    private string $canonicalToken = '';
 
     /**
      * {@inheritdoc}

@@ -21,8 +21,7 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\IosPayloadInterface;
  */
 class IosNotificationPayload extends AbstractMobileNotificationPayload implements IosPayloadInterface
 {
-    /** @var string|null */
-    private $badge;
+    private ?string $badge = null;
 
     /**
      * @param string $badge

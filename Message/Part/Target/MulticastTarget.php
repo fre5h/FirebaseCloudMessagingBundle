@@ -22,7 +22,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Part\Target;
 class MulticastTarget implements TargetInterface, TokenTargetInterface
 {
     /** @var string[] */
-    private $registrationTokens = [];
+    private array $registrationTokens = [];
 
     /**
      * @param string $registrationToken

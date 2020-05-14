@@ -19,8 +19,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Part\Target;
  */
 class ConditionTarget implements TargetInterface
 {
-    /** @var string */
-    private $condition;
+    private string $condition;
 
     /**
      * @param string $condition

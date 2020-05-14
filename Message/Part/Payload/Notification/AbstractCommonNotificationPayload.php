@@ -21,14 +21,11 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\CommonPayloadInterfa
  */
 abstract class AbstractCommonNotificationPayload implements CommonPayloadInterface
 {
-    /** @var string */
-    private $title = '';
+    private string $title = '';
 
-    /** @var string */
-    private $body = '';
+    private string $body = '';
 
-    /** @var string */
-    private $clickAction = '';
+    private string $clickAction = '';
 
     /**
      * @param string $title

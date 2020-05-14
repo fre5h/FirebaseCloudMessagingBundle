@@ -21,14 +21,11 @@ use Fresh\FirebaseCloudMessagingBundle\Message\Part\Payload\AndroidPayloadInterf
  */
 class AndroidNotificationPayload extends AbstractMobileNotificationPayload implements AndroidPayloadInterface
 {
-    /** @var string|null */
-    private $icon;
+    private ?string $icon = null;
 
-    /** @var string|null */
-    private $tag;
+    private ?string $tag = null;
 
-    /** @var string|null */
-    private $color;
+    private ?string $color = null;
 
     /**
      * @param string $icon

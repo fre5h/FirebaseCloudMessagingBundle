@@ -19,8 +19,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Response\MessageResult;
  */
 abstract class AbstractSuccessfulMessageResult extends AbstractMessageResult implements SuccessfulMessageResultInterface
 {
-    /** @var string */
-    private $messageId = '';
+    private string $messageId = '';
 
     /**
      * {@inheritdoc}

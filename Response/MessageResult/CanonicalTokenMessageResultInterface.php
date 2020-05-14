@@ -29,5 +29,5 @@ interface CanonicalTokenMessageResultInterface extends MessageResultInterface
      *
      * @return $this
      */
-    public function setCanonicalToken(string $canonicalToken);
+    public function setCanonicalToken(string $canonicalToken): self;
 }

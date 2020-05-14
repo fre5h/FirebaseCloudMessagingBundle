@@ -19,8 +19,7 @@ namespace Fresh\FirebaseCloudMessagingBundle\Response\MessageResult;
  */
 class FailedMessageResult extends AbstractMessageResult implements FailedMessageResultInterface
 {
-    /** @var string */
-    private $error = '';
+    private string $error = '';
 
     /**
      * {@inheritdoc}
