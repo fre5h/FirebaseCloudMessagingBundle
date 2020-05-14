@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Fresh\FirebaseCloudMessagingBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -27,10 +28,12 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('fresh_firebase_cloud_messaging');
+        $treeBuilder = new TreeBuilder('fresh_firebase_cloud_messaging');
 
-        $rootNode
+        /** @var ArrayNodeDefinition $root */
+        $root = $treeBuilder->getRootNode();
+
+        $root
             ->children()
                 ->scalarNode('sender_id')->end()
                 ->scalarNode('server_key')->end()
