@@ -22,7 +22,7 @@ interface PayloadBuilderInterface
     /**
      * @return $this
      */
-    public function build(): PayloadBuilderInterface;
+    public function build(): self;
 
     /**
      * @return array
