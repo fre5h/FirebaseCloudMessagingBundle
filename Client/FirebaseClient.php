@@ -28,17 +28,13 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class FirebaseClient
 {
-    /** @var HttpClient */
-    private $httpClient;
+    private HttpClient $httpClient;
 
-    /** @var MessageBuilder */
-    private $messageBuilder;
+    private MessageBuilder $messageBuilder;
 
-    /** @var ResponseProcessor */
-    private $responseProcessor;
+    private ResponseProcessor $responseProcessor;
 
-    /** @var EventDispatcherInterface */
-    private $eventDispatcher;
+    private EventDispatcherInterface $eventDispatcher;
 
     /**
      * @param HttpClient               $httpClient

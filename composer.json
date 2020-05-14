@@ -22,9 +22,10 @@
         "issues": "https://github.com/fre5h/FirebaseCloudMessagingBundle/issues"
     },
     "require": {
-        "php": "^7.3.8",
+        "php": "^7.4.5",
         "guzzlehttp/guzzle": "^6.3",
         "symfony/config": "^4.4 || ^5.0",
+        "symfony/contracts": "^4.4 || ^5.0",
         "symfony/event-dispatcher": "^4.4 || ^5.0",
         "symfony/framework-bundle": "^4.4 || ^5.0",
         "symfony/http-foundation": "^4.4 || ^5.0.8",

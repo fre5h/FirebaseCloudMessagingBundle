@@ -20,7 +20,7 @@ use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\FailedMessageResul
 use Fresh\FirebaseCloudMessagingBundle\Response\MessageResult\SuccessfulMessageResult;
 use Fresh\FirebaseCloudMessagingBundle\Response\MulticastMessageResponseInterface;
 use Fresh\FirebaseCloudMessagingBundle\Response\MulticastMessageResponseTrait;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * MulticastMessageResponseEvent.

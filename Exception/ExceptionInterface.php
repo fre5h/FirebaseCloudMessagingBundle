@@ -17,6 +17,6 @@ namespace Fresh\FirebaseCloudMessagingBundle\Exception;
  *
  * @author Artem Henvald <genvaldartem@gmail.com>
  */
-interface ExceptionInterface
+interface ExceptionInterface extends \Throwable
 {
 }

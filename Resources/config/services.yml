@@ -4,7 +4,7 @@ services:
         autoconfigure: true
         public: false
         bind:
-#            $senderId: '%firebase_cloud_messaging.sender_id%'
+            $senderId: '%firebase_cloud_messaging.sender_id%'
             $serverKey: '%firebase_cloud_messaging.server_key%'
             $endpoint: '%firebase_cloud_messaging.endpoint%'
             $guzzleTimeOut: '%firebase_cloud_messaging.guzzle_timeout%'

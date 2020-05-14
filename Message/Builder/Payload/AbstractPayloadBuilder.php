@@ -19,11 +19,8 @@ namespace Fresh\FirebaseCloudMessagingBundle\Message\Builder\Payload;
  */
 abstract class AbstractPayloadBuilder implements PayloadBuilderInterface
 {
-    /** @var PayloadBuilderInterface */
-    protected $payload;
-
-    /** @var array */
-    protected $payloadPart = [];
+    protected PayloadBuilderInterface $payload;
+    protected array $payloadPart = [];
 
     /**
      * {@inheritdoc}
