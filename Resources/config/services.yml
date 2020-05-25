@@ -9,6 +9,13 @@ services:
             $endpoint: '%firebase_cloud_messaging.endpoint%'
             $guzzleTimeOut: '%firebase_cloud_messaging.guzzle_timeout%'
 
+#    Fresh\FirebaseCloudMessagingBundle\DataCollector\FirebaseCollector:
+#        tags:
+#            -
+#                id: 'firebase'
+#                name: data_collector
+#                template: '@FreshFirebaseCloudMessaging/data_collector/firebase.html.twig'
+
     Fresh\FirebaseCloudMessagingBundle\Client\:
         resource: '../../Client/'
 

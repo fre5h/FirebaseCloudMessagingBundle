@@ -1,0 +1,45 @@
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block toolbar %}
+    {% set icon %}
+        {{ include('@FreshFirebaseCloudMessaging/data_collector/icon.svg.twig', { height: 24 }) }}
+        <span class="sf-toolbar-value">?</span>
+    {% endset %}
+
+    {% set text %}
+        <div class="sf-toolbar-info-piece">
+            <b>Total Messages</b>
+            <span class="sf-toolbar-status">?</span>
+        </div>
+    {% endset %}
+
+    {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { 'link': true }) }}
+{% endblock toolbar %}
+
+{% block menu %}
+    <span class="label disabled">
+        <span class="icon">{{ include('@FreshFirebaseCloudMessaging/data_collector/icon.svg.twig', { height: 32 }) }}</span>
+        <strong>Centrifugo</strong>
+    </span>
+{% endblock menu %}
+
+{% block panel %}
+    <h2>Centrifugo Metrics</h2>
+    <div class="metrics">
+        <div class="metric">
+            <span class="value">1</span>
+            <span class="label">Total Messages</span>
+        </div>
+    </div>
+
+    <h3>Additional Resources</h3>
+    <ul>
+        <li><a href="https://github.com/fre5h/FirebaseCloudMessagingBundle/issues">Report an issue</a></li>
+        <li><a href="https://firebase.google.com/docs/cloud-messaging">Firebase Cloud Messaging documentation</a></li>
+        <li><a href="https://github.com/fre5h/FirebaseCloudMessagingBundle">FirebaseCloudMessagingBundle homepage</a></li>
+    </ul>
+{% endblock panel %}

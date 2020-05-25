@@ -77,7 +77,6 @@ class FirebaseClient
     {
         if ($response instanceof MulticastMessageResponse) {
             $this->eventDispatcher->dispatch(
-                FirebaseEvents::MULTICAST_MESSAGE_RESPONSE_EVENT,
                 new MulticastMessageResponseEvent(
                     $response->getMulticastId(),
                     $response->getSuccessfulMessageResults(),
